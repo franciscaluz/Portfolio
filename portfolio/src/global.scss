@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$raleway: "Raleway", sans-serif;
+$preformatted: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace;
+$black: #000000;
+$white: #ffffff;
+$body-color: #9a9a9a;
+$pink: #ff2679;
+$transition-base: all 0.3s ease;
+
+body {
+  height: 100%;
+  font-family: $raleway;
+  font-weight: 300;
+  color: $body-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5 {
+  font-family: $raleway;
+  font-weight: 900;
+  margin-bottom: 1.5em;
+  color: $black;
+}
+
+.display-1 {
+  font-size: 9.75em;
+}
+
+.display-2 {
+  font-size: 7em;
+}
+
+h3,
+.h3 {
+  font-size: 1.5em; //24px
+}
+
+@media (max-width: 991.98px) {
+  .display-1 {
+    font-size: 6em;
+  }
+
+  .display-2 {
+    font-size: 5.5em;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.25em; //20px
+  }
+}
+
+@media (max-width: 767.98px) {
+  .display-1 {
+    font-size: 4em;
+  }
+
+  .display-2 {
+    font-size: 3em;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.125em; //18px
+  }
+}
+
+// MIXINS
+@mixin underline($color) {
+  position: relative;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25em;
+    width: 0;
+    height: 0.25em;
+    margin-top: 0.25em;
+    transition: $transition-base;
+    opacity: 0;
+    background-color: $color;
+  }
+
+  &:hover {
+    $color: $color;
+    text-decoration: none;
+    &:before,
+    &:after {
+      left: 0;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin underline-reversed($color) {
+  position: relative;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25em;
+    width: 100%;
+    height: 0.25em;
+    margin-top: 0.25em;
+    transition: $transition-base;
+    opacity: 1;
+    background-color: $color;
+  }
+
+  &:hover {
+    color: $color;
+    text-decoration: none;
+    &:before,
+    &:after {
+      left: 0;
+      width: 0;
+      opacity: 0;
+    }
+  }
+}
+
+@mixin underline-title($color) {
+  position: relative;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.23em;
+    width: 0;
+    height: 0.25em;
+    margin-top: 0;
+    transition: $transition-base;
+    opacity: 0;
+    background-color: $color;
+    mix-blend-mode: darken;
+  }
+
+  &:hover {
+    color: unset;
+    text-decoration: none;
+    &:before,
+    &:after {
+      left: 0;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #eeeeee;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+.preformatted {
+  font-family: $preformatted;
+}
+//LINKS
+a {
+  color: $black;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+}
+.underlined {
+  @include underline(#000000);
+}
+.underlined-reversed {
+  @include underline-reversed(#000000);
+}
+
+.underlined-title {
+  @include underline-title(#ff2679);
+}
+
+// TEXT
+.text-stroke {
+  color: $black;
+  text-transform: unset;
+  -webkit-text-fill-color: $white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $black;
+}
+
+//LAYOUT
+.page-wrapper {
+  height: auto !important;
+  min-height: calc(100vh - 60px);
+  padding: 5em 0;
+}
+.section-name {
+  position: relative;
+  display: inline-block;
+  font-size: 0.875em;
+  text-transform: uppercase;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -0.25em;
+    left: 0;
+    width: 100%;
+    height: 0.25em;
+    background-color: $black;
+  }
+}
+
+.section-title-wrapper {
+  position: relative;
+  display: inline-block;
+
+  h1 {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .section-title {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .section-title-menu {
+    position: relative;
+    top: -3em;
+    right: -22%;
+    z-index: 3;
+    text-align: right;
+
+    .display-2 {
+      margin-bottom: -0.4em;
+      line-height: normal;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .section-title-menu {
+      top: -1em;
+      right: -10%;
+    }
+  }
+}
+
+//BUTTONS
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  color: $black;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375em 0.75em;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 0.25em;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &.btn-link {
+    justify-content: unset;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    line-height: unset;
+  }
+}
+
+.image-ratio-1 {
+  @include aspect-ratio(1, 1);
+}
+
+.preview {
+  @include aspect-ratio(16, 9);
+  .img-wrapper {
+    background-position: top center;
+    background-size: 100%;
+  }
+}
+
+.preview-alt {
+  @include aspect-ratio(4, 3);
+  .img-wrapper {
+    background-position: center center;
+    background-size: 100%;
+  }
+}
