@@ -17,7 +17,7 @@ const Navigation = () => {
 
           <Nav className="navbar-right d-none d-lg-flex" navbar>
             <NavItem>
-              <Link to="#" className="nav-link">
+              <Link to="/Portfolio" className="nav-link">
                 Portfolio
               </Link>
             </NavItem>

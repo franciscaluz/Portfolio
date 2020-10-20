@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
-import { Link } from "react-router-dom";
+import { projects } from "../constant";
 import { Row, Col, ListGroup } from "reactstrap";
 import DevProjectCard from "../components/DevProjectCard";
 
@@ -19,12 +19,30 @@ const DevScreen = () => {
           <Row>
             <Col md={9} lg={8} className="ml-auto">
               <ListGroup className="list-group dev-project-card-list">
-                <DevProjectCard />
-                <DevProjectCard />
-                <DevProjectCard />
-                <DevProjectCard />
-                <DevProjectCard />
-                <DevProjectCard />
+                {projects
+                  .filter((project) => project.project_cat.includes("Dev"))
+                  .sort((a, b) => b.id - a.id)
+                  .map((filteredProject, index) => {
+                    const {
+                      id,
+                      client,
+                      project_logo,
+                      project_color,
+                      details,
+                      tools,
+                    } = filteredProject;
+                    return (
+                      <DevProjectCard
+                        key={index}
+                        id={id}
+                        name={client}
+                        description={details}
+                        background={project_color}
+                        logo={project_logo}
+                        utilities={tools}
+                      />
+                    );
+                  })}
               </ListGroup>
             </Col>
           </Row>

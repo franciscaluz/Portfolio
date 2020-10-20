@@ -1,15 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
+import { projects } from "../constant";
 import { Link } from "react-router-dom";
-import { Row, Col, Card, CardColumns } from "reactstrap";
-import Soch from "../assets/images/webdesign-soch-1.jpg";
-import SeptCinq from "../assets/images/webdesign-septcinq-prev.jpg";
-import AgenceVoyage from "../assets/images/webdesign-abdm-prev.jpg";
-import Unity from "../assets/images/webdesign-unity-1.jpg";
-import Rosemont from "../assets/images/webdesign-rosemont-prev.jpg";
-import Qub from "../assets/images/webdesign-qub-prev.jpg";
-import Wiki from "../assets/images/webdesign-wiki-prev.jpg";
+import { Row, Col, Card } from "reactstrap";
 
 const WebDesignScreen = () => {
   return (
@@ -25,64 +19,37 @@ const WebDesignScreen = () => {
           </div>
           <Row>
             <Col xs={12} className="ml-auto">
-              <CardColumns>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${Wiki})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${Qub})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${Soch})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview-alt card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${Unity})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${Rosemont})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${SeptCinq})` }}
-                    ></div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="preview card-image-wrapper">
-                    <div
-                      className="img-wrapper"
-                      style={{ backgroundImage: `url(${AgenceVoyage})` }}
-                    ></div>
-                  </div>
-                </Card>
-              </CardColumns>
+              <div className="row row-cols-3">
+                {projects
+                  .sort((a, b) => b.id - a.id)
+                  .map((project, index) => {
+                    const { id, client, project_logo, project_color } = project;
+                    return (
+                      <div key={index} className="col card-col">
+                        <Link to={"/project/" + id} className="card-link">
+                          <Card>
+                            <div className="card-inner image-ratio-1">
+                              <div
+                                className="img-wrapper"
+                                style={{
+                                  backgroundColor: `${project_color}`,
+                                }}
+                              >
+                                <div className="card-logo-wrapper">
+                                  <img
+                                    src={project_logo}
+                                    alt={client}
+                                    className="img-fluid"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </Card>
+                        </Link>
+                      </div>
+                    );
+                  })}
+              </div>
             </Col>
           </Row>
         </section>
@@ -106,10 +73,36 @@ const Wrapper = styled.div`
     mix-blend-mode: multiply;
   }
 
-  .card {
-    border: 0;
+  .card-col {
+    margin-bottom: 30px;
+  }
+
+  .card-link {
+    display: block;
+    width: 100%;
     border-radius: 0.25em;
     overflow: hidden;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+      transform: translateY(-10px);
+    }
+  }
+
+  .card {
+    border: 0;
+  }
+
+  .card-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    img {
+      max-width: 150px;
+    }
   }
 `;

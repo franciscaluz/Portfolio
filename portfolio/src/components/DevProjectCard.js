@@ -1,33 +1,49 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
-const DevProjectCard = () => {
+const DevProjectCard = ({
+  id,
+  name,
+  description,
+  background,
+  logo,
+  utilities,
+}) => {
   return (
     <Wrapper className="list-group-item">
-      <Link to="" className="dev-project-card">
+      <Link to={"/project/" + id} className="dev-project-card">
         <div className="dev-project-card-img-wrapper">
           <div className="image-ratio-1">
-            <div className="img-wrapper"></div>
+            <div
+              className="img-wrapper"
+              style={{
+                backgroundColor: `${background}`,
+              }}
+            >
+              <div className="dev-project-card-logo-wrapper">
+                <img src={logo} alt={name} className="img-fluid" />
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="dev-project-card-body">
-          <h6>Project title</h6>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
-            accumsan amet cras libero commodo in egestas ornare vestibulum.
-            Varius porttitor mi lobortis purus viverra cursus lectus integer. Eu
-            at diam consequat, lacinia cum. Iaculis neque, massa adipiscing in
-            lorem netus adipiscing.
-          </p>
+          <h6>{name}</h6>
+          <p>{description}</p>
+          <ul>
+            {utilities.map((utility, index) => {
+              return <li key={index}>#{utility}</li>;
+            })}
+          </ul>
         </div>
       </Link>
     </Wrapper>
   );
 };
 
-export default DevProjectCard;
+export default withRouter(DevProjectCard);
 
 const Wrapper = styled.li`
   padding: 0;
@@ -46,13 +62,28 @@ const Wrapper = styled.li`
     width: 100%;
     max-width: 14vw;
     margin-right: 2em;
+  }
 
-    .img-wrapper {
-      background-image: url("https://picsum.photos/200/300");
-    }
+  .dev-project-card-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 
   .dev-project-card-body {
     flex: 0 0 70%;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        margin-right: 5px;
+      }
+    }
   }
 `;
