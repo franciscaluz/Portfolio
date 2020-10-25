@@ -5,7 +5,7 @@ $preformatted: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
   "Courier New", monospace;
 $black: #000000;
 $white: #ffffff;
-$body-color: #9a9a9a;
+$body-color: #333;
 $pink: #ff2679;
 $transition-base: all 0.3s ease;
 
@@ -14,6 +14,7 @@ body {
   font-family: $raleway;
   font-weight: 300;
   color: $body-color;
+  font-size: 0.9em;
 }
 
 h1,
@@ -52,6 +53,11 @@ h3,
   font-size: 1.5em; //24px
 }
 
+h4,
+.h4 {
+  font-size: 1.25em; //20px
+}
+
 @media (max-width: 991.98px) {
   .display-1 {
     font-size: 6em;
@@ -67,6 +73,11 @@ h3,
   }
 }
 
+h4,
+.h4 {
+  font-size: 1.125em; //18px
+}
+
 @media (max-width: 767.98px) {
   .display-1 {
     font-size: 4em;
@@ -79,6 +90,11 @@ h3,
   h3,
   .h3 {
     font-size: 1.125em; //18px
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.0625em; //17px
   }
 }
 
@@ -200,6 +216,7 @@ h3,
 }
 //LINKS
 a {
+  display: inline-flex;
   color: $black;
   font-weight: 900;
   text-transform: uppercase;
@@ -209,6 +226,12 @@ a {
     text-decoration: none;
   }
 }
+
+.link {
+  font-weight: 300;
+  text-transform: unset;
+}
+
 .underlined {
   @include underline(#000000);
 }

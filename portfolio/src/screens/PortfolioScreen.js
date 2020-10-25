@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import { Link } from "react-router-dom";
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
+import { projects } from "../constant";
 
 const PortfolioScreen = () => {
   return (
@@ -23,27 +24,23 @@ const PortfolioScreen = () => {
                   Dev
                 </DropdownToggle>
                 <DropdownMenu>
-                  <Link to="" className="dropdown-item">
-                    Projet Albums/Login
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Projet Wiki/ Crud
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Projet Albums/Login
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Projet Wiki/ Crud
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Projet Albums/Login
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Projet Wiki/ Crud
-                  </Link>
-
+                  {projects
+                    .filter((project) => project.project_cat.includes("Dev"))
+                    .sort((a, b) => b.id - a.id)
+                    .map((filteredProject, index) => {
+                      const { client, slug } = filteredProject;
+                      return (
+                        <Link
+                          to={`/project/${slug}`}
+                          className="dropdown-item"
+                          key={index}
+                        >
+                          {client}
+                        </Link>
+                      );
+                    })}
                   <Link to="/dev" className="dropdown-item">
-                    Voir tous les projets dev
+                    Voir tous les projets Dev
                   </Link>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -55,11 +52,55 @@ const PortfolioScreen = () => {
                   Design
                 </DropdownToggle>
                 <DropdownMenu>
-                  <Link to="" className="dropdown-item">
-                    Web Design
+                  {projects
+                    .filter((project) =>
+                      project.project_cat.includes("Design Web")
+                    )
+                    .sort((a, b) => b.id - a.id)
+                    .map((filteredProject, index) => {
+                      const { client, slug } = filteredProject;
+                      return (
+                        <Link
+                          to={`/project/${slug}`}
+                          className="dropdown-item"
+                          key={index}
+                        >
+                          {client}
+                        </Link>
+                      );
+                    })}
+                  <Link to="/web-design" className="dropdown-item">
+                    Voir tous les projets Design Web
                   </Link>
-                  <Link to="" className="dropdown-item">
-                    Design Graphiques
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown direction="right">
+                <DropdownToggle
+                  tag="span"
+                  className="display-2 text-stroke underlined-title"
+                >
+                  Graphic
+                </DropdownToggle>
+                <DropdownMenu>
+                  {projects
+                    .filter((project) =>
+                      project.project_cat.includes("Design Web")
+                    )
+                    .sort((a, b) => b.id - a.id)
+                    .map((filteredProject, index) => {
+                      const { client, slug } = filteredProject;
+                      return (
+                        <Link
+                          to={`/project/${slug}`}
+                          className="dropdown-item"
+                          key={index}
+                        >
+                          {client}
+                        </Link>
+                      );
+                    })}
+                  <Link to="/web-design" className="dropdown-item">
+                    Voir tous les projets Design Web
                   </Link>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -98,11 +139,9 @@ const Wrapper = styled.div`
     margin-bottom: 0.5em;
     padding: 0 1.5em;
     font-size: 1.125em; //18px
-    /*     text-transform: uppercase;
-    font-weight: 900; */
     text-transform: none;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+    /*     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace; */
 
     &:last-of-type {
       margin-bottom: 0;

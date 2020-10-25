@@ -21,6 +21,7 @@ import WikiHomepage from "./assets/images/project-wiki-1.jpg";
 export const projects = [
   {
     id: "1",
+    slug: "au-bout-du-monde",
     client: "Au Bout du Monde",
     client_type: "Agence de voyage",
     project_cat: ["Design Web"],
@@ -29,12 +30,13 @@ export const projects = [
     project_logo: `${AbdmLogo}`,
     project_color: "#1ED2AF",
     details:
-      "Projet de formation visant la conception visuelle d'une maquette fonctionnelle.",
+      "Projet de formation visant la conception visuelle et graphique d'une maquette fonctionnelle.",
     tools: ["Illustrator"],
     photos: [{ id: "1", name: "Page d'Accueil", photo: `${AbdmHomepage}` }],
   },
   {
     id: "2",
+    slug: "sept-cinq",
     client: "SeptCinq",
     client_type: "Boutique de vêtements et vente en ligne",
     project_cat: ["Design Web", "Dev"],
@@ -50,9 +52,12 @@ export const projects = [
       { id: "2", name: "Page Produits", photo: `${SeptCinqProductPage}` },
       { id: "3", name: "Page Produit", photo: `${SeptCinqItemPage}` },
     ],
+    url_github: "",
+    url_vercel: "",
   },
   {
     id: "3",
+    slug: "rosemont",
     client: "Rosemont Camera Gear",
     client_type: "Boutique de vente en ligne",
     project_cat: ["Design Web", "Dev"],
@@ -70,6 +75,7 @@ export const projects = [
   },
   {
     id: "4",
+    slug: "unity-design",
     client: "Unity Design",
     client_type: "Entreprise de design",
     project_cat: ["Design Web"],
@@ -87,6 +93,7 @@ export const projects = [
   },
   {
     id: "5",
+    slug: "soch",
     client: "Soch",
     client_type: "Pâtisseries et Desserts Faits-Maison",
     project_cat: ["Design Web"],
@@ -104,6 +111,7 @@ export const projects = [
   },
   {
     id: "6",
+    slug: "qub",
     client: "Qub",
     client_type: "Service streaming de musique en ligne",
     project_cat: ["Design Web", "Dev"],
@@ -112,16 +120,20 @@ export const projects = [
     project_logo: `${QubLogo}`,
     project_color: "#FF21B2",
     details:
-      "Projet de formation porté sur la connexion utilisateur à un site fictif de streaming de musique, les données de tableaux, ainsi que les différents routages.",
+      "Projet de formation d'un site fictif de streaming de musique, basé sur la dynamisation de la connexion utilisateur, les données type object, ainsi que les différents routages.",
     tools: ["Figma", "React", "JSX", "SASS"],
     photos: [
       { id: "1", name: "Page Connexion", photo: `${QubLogin}` },
       { id: "2", name: "Page d'Accueil", photo: `${QubHomepage}` },
       { id: "3", name: "Page Item", photo: `${QubItemPage}` },
     ],
+    url_github:
+      "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
+    url_vercel: "https://aec-front-end-eight.vercel.app/",
   },
   {
     id: "7",
+    slug: "wik-and-morty",
     client: "Wik & Morty",
     client_type: "Open source",
     project_cat: ["Design Web", "Dev"],
@@ -136,5 +148,7 @@ export const projects = [
       { id: "1", name: "homepage", photo: `${WikiHomepage}` },
       { id: "2", name: "product page", photo: `${SochProductPage}` },
     ],
+    url_github: "",
+    url_vercel: "",
   },
 ];

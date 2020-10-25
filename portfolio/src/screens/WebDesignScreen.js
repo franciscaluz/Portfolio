@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import { projects } from "../constant";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { Row, Col, Card } from "reactstrap";
 
 const WebDesignScreen = () => {
@@ -23,10 +23,16 @@ const WebDesignScreen = () => {
                 {projects
                   .sort((a, b) => b.id - a.id)
                   .map((project, index) => {
-                    const { id, client, project_logo, project_color } = project;
+                    const {
+                      id,
+                      slug,
+                      client,
+                      project_logo,
+                      project_color,
+                    } = project;
                     return (
                       <div key={index} className="col card-col">
-                        <Link to={"/project/" + id} className="card-link">
+                        <Link to={`/project/${slug}`} className="card-link">
                           <Card>
                             <div className="card-inner image-ratio-1">
                               <div
@@ -58,7 +64,7 @@ const WebDesignScreen = () => {
   );
 };
 
-export default WebDesignScreen;
+export default withRouter(WebDesignScreen);
 
 const Wrapper = styled.div`
   .section-web {
