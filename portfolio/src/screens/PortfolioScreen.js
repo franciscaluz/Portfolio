@@ -99,11 +99,16 @@ const PortfolioScreen = () => {
                         </Link>
                       );
                     })}
-                  <Link to="/web-design" className="dropdown-item">
-                    Voir tous les projets Design Web
+                  <Link to="/graphic-design" className="dropdown-item">
+                    Voir tous les projets
                   </Link>
                 </DropdownMenu>
               </UncontrolledDropdown>
+            </div>
+          </div>
+          <div className="menu-spinner-wrapper">
+            <div className="menu-spinner">
+              <h6>Choississez une catégorie</h6>
             </div>
           </div>
         </section>
@@ -140,8 +145,6 @@ const Wrapper = styled.div`
     padding: 0 1.5em;
     font-size: 1.125em; //18px
     text-transform: none;
-    /*     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace; */
 
     &:last-of-type {
       margin-bottom: 0;
@@ -164,6 +167,29 @@ const Wrapper = styled.div`
 
     .dropdown-item {
       font-size: 0.9em;
+    }
+  }
+
+  .menu-spinner-wrapper {
+    position: fixed;
+    bottom: 15%;
+    right: 15%;
+
+    .menu-spinner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      padding: 20px;
+      border-radius: 100%;
+      background: #ff2679;
+    }
+
+    h6 {
+      text-transform: uppercase;
+      margin-bottom: 0;
     }
   }
 `;

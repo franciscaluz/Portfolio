@@ -18,6 +18,60 @@ import QubItemPage from "./assets/images/project-qub-3.jpg";
 import WikiLogo from "./assets/images/project-wiki-logo.svg";
 import WikiHomepage from "./assets/images/project-wiki-1.jpg";
 
+import Lucha1 from "./assets/images/project-Lucha-1.png";
+import Lucha1Insp1 from "./assets/images/project-Lucha-inspi-1.jpg";
+import Lucha1Insp2 from "./assets/images/project-Lucha-inspi-2.jpg";
+import Lucha1Insp3 from "./assets/images/project-Lucha-inspi-3.gif";
+import Lucha1Insp4 from "./assets/images/project-Lucha-inspi-4.jpg";
+import Lucha1Insp5 from "./assets/images/project-Lucha-inspi-5.jpg";
+import Lucha1Insp6 from "./assets/images/project-Lucha-inspi-6.jpg";
+import Lucha1Insp7 from "./assets/images/project-Lucha-inspi-7.jpg";
+import Lucha1Insp8 from "./assets/images/project-Lucha-inspi-8.jpg";
+import Lucha1Insp9 from "./assets/images/project-Lucha-inspi-9.jpg";
+import LuchaMenu1 from "./assets/images/project-lucha-menu-1.jpg";
+import LuchaMenu2 from "./assets/images/project-lucha-menu-2.jpg";
+import BootlagersV1 from "./assets/images/project-bootlagers-v1.png";
+import BootlagersV1Insp1 from "./assets/images/project-bootlagers-v1-inspi-1.gif";
+import BootlagersV1Insp2 from "./assets/images/project-bootlagers-v1-inspi-2.jpg";
+import BootlagersV1Insp3 from "./assets/images/project-bootlagers-v1-inspi-3.jpg";
+import BootlagersV1Insp4 from "./assets/images/project-bootlagers-v1-inspi-4.jpg";
+import BootlagersV1Insp5 from "./assets/images/project-bootlagers-v1-inspi-5.jpg";
+import BootlagersV1Insp6 from "./assets/images/project-bootlagers-v1-inspi-6.jpg";
+import BootlagersV1Insp7 from "./assets/images/project-bootlagers-v1-inspi-7.jpg";
+import BootlagersV2 from "./assets/images/project-bootlagers-v2.png";
+import BootlagersV2Insp1 from "./assets/images/project-bootlagers-v2-inspi-1.jpg";
+import BootlagersV2Insp2 from "./assets/images/project-bootlagers-v2-inspi-2.jpg";
+import BootlagersV2Insp3 from "./assets/images/project-bootlagers-v2-inspi-3.jpg";
+import BootlagersV2Insp4 from "./assets/images/project-bootlagers-v2-inspi-4.jpg";
+import BootlagersV2Insp5 from "./assets/images/project-bootlagers-v2-inspi-5.jpg";
+import BootlagersV2Insp6 from "./assets/images/project-bootlagers-v2-inspi-6.gif";
+import Lips from "./assets/images/project-lips.jpg";
+import LipsInsp1 from "./assets/images/project-lips-inspi-1.jpg";
+import LipsInsp2 from "./assets/images/project-lips-inspi-2.jpg";
+import LipsInsp3 from "./assets/images/project-lips-inspi-3.jpg";
+import LipsInsp4 from "./assets/images/project-lips-inspi-4.jpg";
+import LipsInsp5 from "./assets/images/project-lips-inspi-5.gif";
+import LipsInsp6 from "./assets/images/project-lips-inspi-6.gif";
+import LipsInsp7 from "./assets/images/project-lips-inspi-7.png";
+import LipsInsp8 from "./assets/images/project-lips-inspi-8.gif";
+import LipsInsp9 from "./assets/images/project-lips-inspi-9.gif";
+import LipsInsp10 from "./assets/images/project-lips-inspi-10.jpg";
+import BootlagersV3 from "./assets/images/project-bootlagers-v3.png";
+import BootlagersV3Insp1 from "./assets/images/project-bootlagers-v3-inspi-1.gif";
+import BootlagersV3Insp2 from "./assets/images/project-bootlagers-v3-inspi-2.jpg";
+import BootlagersV3Insp3 from "./assets/images/project-bootlagers-v3-inspi-3.gif";
+import Mag1 from "./assets/images/project-mag-1.png";
+import Mag2 from "./assets/images/project-mag-2.png";
+import MagInsp1 from "./assets/images/project-mag-inspi-1.jpg";
+import MagInsp2 from "./assets/images/project-mag-inspi-2.jpg";
+import MagInsp3 from "./assets/images/project-mag-inspi-3.jpg";
+import MagInsp4 from "./assets/images/project-mag-inspi-4.jpg";
+import Handset from "./assets/images/project-handset.png";
+import HandsetInsp1 from "./assets/images/project-handset-inspi-1.jpg";
+import HandsetInsp2 from "./assets/images/project-handset-inspi-2.jpg";
+import HandsetInsp3 from "./assets/images/project-handset-inspi-3.gif";
+import Quote from "./assets/images/project-quote.png";
+
 export const projects = [
   {
     id: "1",
@@ -151,4 +205,256 @@ export const projects = [
     url_github: "",
     url_vercel: "",
   },
+];
+
+export const graphic = [
+  {
+    id: "1",
+    name: "",
+    type: "",
+    year: "",
+    photo: `${Lucha1Insp1}`,
+  },
+  { id: "2", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp2}` },
+  {
+    id: "3",
+    name: "Lucha Libre Paris",
+    type: "Campagne Alinea",
+    year: "2014",
+    photo: `${Lucha1}`,
+  },
+  { id: "4", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp3}` },
+  { id: "5", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp4}` },
+  { id: "6", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp5}` },
+  { id: "7", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp6}` },
+  { id: "8", name: "Inspiration", type: "", year: "", photo: `${Lucha1Insp7}` },
+  {
+    id: "9",
+    name: "Lucha Libre Paris",
+    type: "Menu Recto",
+    year: "2014",
+    photo: `${LuchaMenu1}`,
+  },
+  {
+    id: "10",
+    name: "Lucha Libre Paris",
+    type: "Menu Verso",
+    year: "2014",
+    photo: `${LuchaMenu2}`,
+  },
+  {
+    id: "11",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${Lucha1Insp8}`,
+  },
+  {
+    id: "12",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${Lucha1Insp9}`,
+  },
+  {
+    id: "13",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp1}`,
+  },
+  {
+    id: "14",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp2}`,
+  },
+  {
+    id: "15",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp3}`,
+  },
+  {
+    id: "16",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp4}`,
+  },
+  {
+    id: "17",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp5}`,
+  },
+  {
+    id: "18",
+    name: "Bootlagers Paris",
+    type: "Campagne Alinea V1",
+    year: "2014",
+    photo: `${BootlagersV1}`,
+  },
+  {
+    id: "19",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp6}`,
+  },
+  {
+    id: "20",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV1Insp7}`,
+  },
+
+  {
+    id: "21",
+    name: "Inpiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp1}`,
+  },
+  {
+    id: "22",
+    name: "inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp2}`,
+  },
+  {
+    id: "23",
+    name: "Bootlagers Paris",
+    type: "Campagne Alinea",
+    year: "2014",
+    photo: `${BootlagersV2}`,
+  },
+  {
+    id: "24",
+    name: "Inpiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp3}`,
+  },
+  {
+    id: "25",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp4}`,
+  },
+  {
+    id: "26",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp5}`,
+  },
+  {
+    id: "27",
+    name: "Inpiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV2Insp6}`,
+  },
+
+  {
+    id: "28",
+    name: "Inpiration",
+    type: "",
+    year: "",
+    photo: `${LipsInsp1}`,
+  },
+  { id: "29", name: "Inspiration", type: "", year: "", photo: `${LipsInsp2}` },
+  { id: "30", name: "Inspiration", type: "", year: "", photo: `${LipsInsp3}` },
+  {
+    id: "31",
+    name: "Test 3D",
+    type: "Projet Personel",
+    year: "2014",
+    photo: `${Lips}`,
+  },
+  { id: "32", name: "Inspiration", type: "", year: "", photo: `${LipsInsp4}` },
+  { id: "33", name: "Inspiration", type: "", year: "", photo: `${LipsInsp5}` },
+  { id: "34", name: "Inspiration", type: "", year: "", photo: `${LipsInsp6}` },
+  { id: "35", name: "Inspiration", type: "", year: "", photo: `${LipsInsp7}` },
+  { id: "36", name: "Inspiration", type: "", year: "", photo: `${LipsInsp8}` },
+  { id: "37", name: "Inspiration", type: "", year: "", photo: `${LipsInsp9}` },
+  { id: "38", name: "Inspiration", type: "", year: "", photo: `${LipsInsp10}` },
+
+  {
+    id: "39",
+    name: "Bootlagers Paris",
+    type: "Campagne Alinea V3",
+    year: "2014",
+    photo: `${BootlagersV3}`,
+  },
+  {
+    id: "40",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV3Insp1}`,
+  },
+  {
+    id: "41",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV3Insp2}`,
+  },
+  {
+    id: "42",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${BootlagersV3Insp3}`,
+  },
+
+  { id: "43", name: "Inspiration", type: "", year: "", photo: `${MagInsp1}` },
+  { id: "44", name: "Inspiration", type: "", year: "", photo: `${MagInsp2}` },
+  { id: "45", name: "Inspiration", type: "", year: "", photo: `${MagInsp3}` },
+  { id: "46", name: "Inspiration", type: "", year: "", photo: `${MagInsp4}` },
+  {
+    id: "47",
+    name: "Magazine MockUp 1",
+    type: "Projet Personnel",
+    year: "2018",
+    photo: `${Mag1}`,
+  },
+  {
+    id: "48",
+    name: "Magazine Mock Up 2",
+    type: "Projet Personnel",
+    year: "2018",
+    photo: `${Mag2}`,
+  },
+  {
+    id: "49",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${HandsetInsp1}`,
+  },
+  {
+    id: "50",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${HandsetInsp2}`,
+  },
+  {
+    id: "51",
+    name: "Inspiration",
+    type: "",
+    year: "",
+    photo: `${HandsetInsp3}`,
+  },
+  { id: "52", name: "Inspiration", type: "", year: "", photo: `${Handset}` },
+  { id: "53", name: "Inspiration", type: "", year: "", photo: `${Quote}` },
 ];

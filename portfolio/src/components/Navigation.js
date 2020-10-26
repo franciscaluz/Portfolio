@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
 
   .navbar {
     display: flex;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useLocation, useRouteMatch } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
-import { Row, Col, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import { FiX, FiGlobe, FiGithub } from "react-icons/fi";
 import { projects } from "../constant";
 

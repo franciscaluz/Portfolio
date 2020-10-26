@@ -1,9 +1,10 @@
 import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import HomepageScreen from "./screens/HomepageScreen";
 import PortfolioScreen from "./screens/PortfolioScreen";
 import DevScreen from "./screens/DevScreen";
 import WebDesignScreen from "./screens/WebDesignScreen";
+import GraphicDesignScreen from "./screens/GraphicDesignScreen";
 import ProjectScreen from "./screens/ProjectScreen";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/web-design" exact>
           <WebDesignScreen />
+        </Route>
+        <Route path="/graphic-design" exact>
+          <GraphicDesignScreen />
         </Route>
         <Route path="/project/:slug">
           <ProjectScreen />

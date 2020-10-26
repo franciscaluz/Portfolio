@@ -24,7 +24,6 @@ const WebDesignScreen = () => {
                   .sort((a, b) => b.id - a.id)
                   .map((project, index) => {
                     const {
-                      id,
                       slug,
                       client,
                       project_logo,

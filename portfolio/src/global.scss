@@ -98,7 +98,7 @@ h4,
   }
 }
 
-// MIXINS
+// MIXINS & EFFECTS
 @mixin underline($color) {
   position: relative;
   text-decoration: none;
@@ -211,6 +211,16 @@ h4,
     background-size: cover;
   }
 }
+
+.rotate {
+  animation: rotate 3.5s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .preformatted {
   font-family: $preformatted;
 }
@@ -279,6 +289,14 @@ a {
   position: relative;
   display: inline-block;
 
+  &.section-sticky {
+    position: sticky !important;
+    top: 60px;
+    left: 0;
+    z-index: -1;
+    display: block;
+  }
+
   h1 {
     margin-bottom: 0;
     line-height: 1;
@@ -291,13 +309,18 @@ a {
 
   .section-title-menu {
     position: relative;
-    top: -3em;
-    right: -22%;
+    top: -2em;
+    right: -2%;
     z-index: 3;
     text-align: right;
 
-    .display-2 {
-      margin-bottom: -0.4em;
+    .display-4 {
+      margin-bottom: -0.3em;
+      line-height: normal;
+    }
+
+    .display-3 {
+      margin-bottom: -0.5em;
       line-height: normal;
     }
   }
