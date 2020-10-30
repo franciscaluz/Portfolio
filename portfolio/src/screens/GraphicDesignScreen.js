@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { useHistory } from "react-router-dom";
 import BaseScreen from "./BaseScreen";
 import Masonry from "react-masonry-css";
+import { Button, CustomInput } from "reactstrap";
 import { graphic } from "../constant";
+import { FiArrowLeft } from "react-icons/fi";
 
 const GraphicDesignScreen = () => {
+  const history = useHistory();
   const breakpointColumnsObj = {
     default: 3,
     991: 3,
@@ -17,6 +21,12 @@ const GraphicDesignScreen = () => {
       <Wrapper>
         <section className="section-graphic">
           <div className="section-title-wrapper section-sticky">
+            <div className="mb-3">
+              <Button color="left-underline" onClick={() => history.goBack()}>
+                <FiArrowLeft />
+                Retour
+              </Button>
+            </div>
             <div className="section-title d-flex align-bottom justify-content-between w-100 mb-5">
               <div className="">
                 <h1 className="section-title display-3">Projets</h1>
@@ -25,7 +35,14 @@ const GraphicDesignScreen = () => {
                   <h1 className="display-3 text-stroke">Graphique</h1>
                 </div>
               </div>
-              <div className="filter-wrapper"></div>
+              <div className="filter-wrapper">
+                <CustomInput
+                  type="switch"
+                  id="exampleCustomSwitch"
+                  name="customSwitch"
+                  label="Filtrer"
+                />
+              </div>
             </div>
           </div>
           <Masonry

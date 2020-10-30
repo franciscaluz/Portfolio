@@ -1,3 +1,4 @@
+@import "./mixin.scss";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $raleway: "Raleway", sans-serif;
@@ -16,6 +17,8 @@ body {
   color: $body-color;
   font-size: 0.9em;
 }
+
+// HEADINGS
 
 h1,
 h2,
@@ -98,133 +101,8 @@ h4,
   }
 }
 
-// MIXINS & EFFECTS
-@mixin underline($color) {
-  position: relative;
-  text-decoration: none;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.25em;
-    width: 0;
-    height: 0.25em;
-    margin-top: 0.25em;
-    transition: $transition-base;
-    opacity: 0;
-    background-color: $color;
-  }
-
-  &:hover {
-    $color: $color;
-    text-decoration: none;
-    &:before,
-    &:after {
-      left: 0;
-      width: 100%;
-      opacity: 1;
-    }
-  }
-}
-
-@mixin underline-reversed($color) {
-  position: relative;
-  text-decoration: none;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.25em;
-    width: 100%;
-    height: 0.25em;
-    margin-top: 0.25em;
-    transition: $transition-base;
-    opacity: 1;
-    background-color: $color;
-  }
-
-  &:hover {
-    color: $color;
-    text-decoration: none;
-    &:before,
-    &:after {
-      left: 0;
-      width: 0;
-      opacity: 0;
-    }
-  }
-}
-
-@mixin underline-title($color) {
-  position: relative;
-  text-decoration: none;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.23em;
-    width: 0;
-    height: 0.25em;
-    margin-top: 0;
-    transition: $transition-base;
-    opacity: 0;
-    background-color: $color;
-    mix-blend-mode: darken;
-  }
-
-  &:hover {
-    color: unset;
-    text-decoration: none;
-    &:before,
-    &:after {
-      left: 0;
-      width: 100%;
-      opacity: 1;
-    }
-  }
-}
-
-@mixin aspect-ratio($width, $height) {
-  position: relative;
-  overflow: hidden;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-  }
-  > .img-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #eeeeee;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-.rotate {
-  animation: rotate 3.5s linear infinite;
-}
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.preformatted {
-  font-family: $preformatted;
-}
 //LINKS
+
 a {
   display: inline-flex;
   color: $black;
@@ -253,7 +131,12 @@ a {
   @include underline-title(#ff2679);
 }
 
-// TEXT
+// TEXT HELPERS
+
+.preformatted {
+  font-family: $preformatted;
+}
+
 .text-stroke {
   color: $black;
   text-transform: unset;
@@ -263,10 +146,11 @@ a {
 }
 
 //LAYOUT
+
 .page-wrapper {
   height: auto !important;
   min-height: calc(100vh - 60px);
-  padding: 5em 0;
+  padding: 2em 0;
 }
 .section-name {
   position: relative;
@@ -288,13 +172,14 @@ a {
 .section-title-wrapper {
   position: relative;
   display: inline-block;
+  margin-bottom: 3em;
 
   &.section-sticky {
     position: sticky !important;
     top: 60px;
     left: 0;
-    z-index: -1;
-    display: block;
+    z-index: unset;
+    display: inline-block;
   }
 
   h1 {
@@ -314,8 +199,8 @@ a {
     z-index: 3;
     text-align: right;
 
-    .display-4 {
-      margin-bottom: -0.3em;
+    .display-2 {
+      margin-bottom: -0.5em;
       line-height: normal;
     }
 
@@ -334,7 +219,9 @@ a {
 }
 
 //BUTTONS
+
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -352,6 +239,11 @@ a {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
   &.btn-link {
     justify-content: unset;
     border: 0;
@@ -359,24 +251,73 @@ a {
     padding: 0;
     line-height: unset;
   }
+
+  &.btn-left-underline {
+    @include underline-reversed(#000000);
+    justify-content: unset;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: unset;
+
+    svg {
+      position: absolute;
+      left: -2em;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &:hover {
+      color: $pink;
+    }
+  }
 }
 
 .image-ratio-1 {
   @include aspect-ratio(1, 1);
 }
 
-.preview {
-  @include aspect-ratio(16, 9);
-  .img-wrapper {
-    background-position: top center;
-    background-size: 100%;
-  }
-}
+// FORMS
+.custom-control {
+  &.custom-switch {
+    .custom-control-label {
+      font-weight: 900;
+      text-transform: uppercase;
 
-.preview-alt {
-  @include aspect-ratio(4, 3);
-  .img-wrapper {
-    background-position: center center;
-    background-size: 100%;
+      &:before,
+      &:after {
+        position: absolute;
+        right: -7em;
+        left: auto;
+      }
+
+      &:before {
+        top: -0.4em;
+        width: calc(6em + 6px);
+        height: calc(1.8em + 6px);
+        border: 3px solid $black;
+        border-radius: 0.25em;
+      }
+      &:after {
+        top: -0.08em;
+        right: -6.7em;
+        width: calc(3em - 6px);
+        height: calc(2em - 6px);
+        background: transparent;
+        border: 3px solid #000000;
+        border-radius: 0;
+      }
+    }
+    .custom-control-input:checked {
+      ~ .custom-control-label:before {
+        background: $pink;
+      }
+      ~ .custom-control-label:after {
+        background-color: #fff;
+        transform: translateX(-3.2em);
+      }
+    }
   }
 }

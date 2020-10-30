@@ -122,7 +122,7 @@ export default PortfolioScreen;
 const Wrapper = styled.div`
   .dropdown {
     line-height: normal;
-    margin-bottom: -2.5em;
+    margin-bottom: -1.5em;
   }
 
   span {
