@@ -9,7 +9,7 @@ const BaseScreen = ({ children }) => {
     <Wrapper>
       <Navigation />
       <div className="page-wrapper">
-        <Container>{children}</Container>
+        <Container fluid="md">{children}</Container>
       </div>
       <Footer />
     </Wrapper>

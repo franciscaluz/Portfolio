@@ -6,6 +6,7 @@ import DevScreen from "./screens/DevScreen";
 import WebDesignScreen from "./screens/WebDesignScreen";
 import GraphicDesignScreen from "./screens/GraphicDesignScreen";
 import ProjectScreen from "./screens/ProjectScreen";
+import Test from "./screens/test";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/project/:slug">
           <ProjectScreen />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
       </Switch>
     </>

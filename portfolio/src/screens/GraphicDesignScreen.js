@@ -1,19 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 import BaseScreen from "./BaseScreen";
 import Masonry from "react-masonry-css";
 import { Button, CustomInput } from "reactstrap";
 import { graphic } from "../constant";
-import { FiArrowLeft } from "react-icons/fi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const GraphicDesignScreen = () => {
   const history = useHistory();
+  const revealRefs = useRef([]);
+  revealRefs.current = [];
   const breakpointColumnsObj = {
     default: 3,
     991: 3,
     767: 2,
     575: 1,
+  };
+
+  useEffect(() => {
+    revealRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        {
+          autoAlpha: 0,
+          y: 30,
+          delay: 0.7,
+        },
+        {
+          duration: 0.6,
+          autoAlpha: 1,
+          ease: "none",
+          y: 0,
+          scrollTrigger: {
+            id: `section-${index + 1}`,
+            trigger: el,
+            scrub: 1,
+            start: "top 95%",
+            end: "top 60%",
+            toggleActions: "restart pause reverse reset",
+            markers: false,
+          },
+        }
+      );
+    });
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
   };
 
   return (
@@ -23,11 +61,10 @@ const GraphicDesignScreen = () => {
           <div className="section-title-wrapper section-sticky">
             <div className="mb-3">
               <Button color="left-underline" onClick={() => history.goBack()}>
-                <FiArrowLeft />
                 Retour
               </Button>
             </div>
-            <div className="section-title d-flex align-bottom justify-content-between w-100 mb-5">
+            <div className="d-flex align-bottom justify-content-between w-100 mb-5">
               <div className="">
                 <h1 className="section-title display-3">Projets</h1>
                 <div className="section-title-menu">
@@ -59,6 +96,7 @@ const GraphicDesignScreen = () => {
                     src={item.photo}
                     alt="project"
                     className="img-fluid"
+                    ref={addToRefs}
                   />
                 );
               })}

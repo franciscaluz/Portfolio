@@ -4,7 +4,6 @@ import { withRouter, Link, useHistory } from "react-router-dom";
 import BaseScreen from "./BaseScreen";
 import { projects } from "../constant";
 import { Row, Col, Card, Button } from "reactstrap";
-import { FiArrowLeft } from "react-icons/fi";
 
 const WebDesignScreen = () => {
   const history = useHistory();
@@ -16,7 +15,6 @@ const WebDesignScreen = () => {
           <div className="section-title-wrapper section-sticky">
             <div className="mb-3">
               <Button color="left-underline" onClick={() => history.goBack()}>
-                <FiArrowLeft />
                 Retour
               </Button>
             </div>

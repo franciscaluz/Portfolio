@@ -1,12 +1,14 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import { Button } from "reactstrap";
-import { FiX, FiGlobe, FiGithub } from "react-icons/fi";
+import { FiGlobe, FiGithub } from "react-icons/fi";
+import { SiEtsy } from "react-icons/si";
 import { projects } from "../constant";
 
 const ProjectScreen = () => {
+  const history = useHistory();
   const { slug } = useParams();
 
   function findData(slug) {
@@ -15,80 +17,117 @@ const ProjectScreen = () => {
   }
 
   const project = findData(slug);
+
+  const [isActive, setIsActive] = useState(true);
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <BaseScreen>
       <Wrapper>
-        <div className="section-project">
-          <div className="section-project-menu">
-            <div>
-              <h6 className="section-name">Projet</h6>
-              <Button color="icon">
-                <FiX />
-              </Button>
-            </div>
-            <h1 className="section-title">{project.client}</h1>
-            <p className="section-subtitle">{project.client_type}</p>
-            <p>
-              {project.details}
-              <br />({project.project_year})
-            </p>
-            <p>
-              {project.tools.map((tool, index) => {
-                return (
-                  <span key={index} className="section-tool">
-                    #{tool}
-                  </span>
-                );
-              })}
-            </p>
-            {project.url_github ? (
-              <p className="section-url">
-                <span className="section-url-icon">
-                  <FiGithub />
-                </span>
-                <a
-                  href={project.url_github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Lien GitHub
-                </a>
-              </p>
-            ) : (
-              <span></span>
-            )}
-            {project.url_vercel ? (
-              <p className="section-url">
-                <span className="section-url-icon">
-                  <FiGlobe />
-                </span>
-                <a
-                  href={project.url_vercel}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Voir le projet
-                </a>
-              </p>
-            ) : (
-              <span></span>
-            )}
+        <div
+          className={isActive ? "section-project opened" : "section-project"}
+        >
+          <div className="section-project-toggle">
+            <Button
+              color="left-underline mr-3"
+              onClick={() => history.goBack()}
+            >
+              Retour
+            </Button>
+            <Button color="left-underline" onClick={handleToggle}>
+              {isActive ? "Masquer détails" : "Afficher détails"}
+            </Button>
           </div>
-
-          <div className="section-project-content">
-            <div className="section-project-image-wrapper">
-              {project.photos.map((photo, index) => {
-                return (
-                  <div key={index} className="section-project-image">
-                    <h4 photo={photo.name}>{photo.name}</h4>
-                    <img
-                      src={photo.photo}
-                      className="img-fluid"
-                      alt="project"
-                    />
+          <div className="section-project-content-wrapper">
+            <div className="section-project-menu-wrapper">
+              <div className="section-project-menu">
+                <div className="menu">
+                  <div className="section-title-wrapper">
+                    <h1 className="display-3">Projet</h1>
+                    <div className="section-title-menu">
+                      <h1 className="text-stroke display-3">Détails</h1>
+                    </div>
                   </div>
-                );
-              })}
+                  <h3 className="mb-0">{project.client}</h3>
+
+                  <p className="section-subtitle text-lg">
+                    {project.client_type}&nbsp;({project.project_year})
+                  </p>
+
+                  <p>{project.details}</p>
+
+                  <p className="section-tool">
+                    {project.tools.map((tool, index) => {
+                      return <span key={index}>#{tool}</span>;
+                    })}
+                  </p>
+
+                  <ul className="section-url">
+                    {project.urls.map((link, index) => {
+                      return (
+                        <li key={index}>
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {link.type === "etsy" ? (
+                              <span>
+                                <span className="section-url-icon">
+                                  <SiEtsy />
+                                </span>
+                                Suivre ce lien
+                              </span>
+                            ) : link.type === "github" ? (
+                              <span>
+                                <span className="section-url-icon">
+                                  <FiGithub />
+                                </span>
+                                Lien GitHub
+                              </span>
+                            ) : link.type === "vercel" ? (
+                              <span>
+                                <span className="section-url-icon">
+                                  <FiGlobe />
+                                </span>
+                                Voir le projet
+                              </span>
+                            ) : (
+                              <span>
+                                <span className="section-url-icon">
+                                  <FiGlobe />
+                                </span>
+                                Aller sur le site
+                              </span>
+                            )}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="section-project-content">
+              <div className="section-project-image-wrapper">
+                {project.photos.map((photo, index) => {
+                  return (
+                    <div key={index} className="section-project-image">
+                      <p className="text-thin text-sm text-right">
+                        {photo.name}
+                      </p>
+                      <img
+                        src={photo.photo}
+                        className="img-fluid"
+                        alt="project"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -99,83 +138,4 @@ const ProjectScreen = () => {
 
 export default ProjectScreen;
 
-const Wrapper = styled.div`
-  .section-project {
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    align-content: stretch;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .section-project-menu {
-    position: sticky;
-    top: 60px;
-    left: 0;
-    z-index: 3;
-    display: inline-flex;
-    flex-direction: column;
-    flex: 0 1 calc(100% / 3 - 15px);
-    width: 100%;
-    height: 50%;
-    max-width: calc(100% / 3 - 15px);
-    padding: 0 15px 60px 0;
-  }
-
-  .section-title {
-    margin-bottom: 0;
-  }
-
-  .section-subtitle {
-    font-size: 500;
-    margin-bottom: 2em;
-  }
-
-  .section-url {
-    display: flex;
-    align-items: center;
-
-    a {
-      font-size: 0.9em;
-      letter-spacing: -0.05em;
-    }
-
-    .section-url-icon {
-      flex: 0 0 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      margin-right: 1em;
-      padding: 2px;
-      border: 1px solid #000000;
-      border-radius: 100%;
-      background: #000000;
-      color: #ffffff;
-    }
-    svg {
-      width: 100%;
-      max-width: 14px;
-    }
-  }
-
-  .section-project-content {
-    display: inline-block;
-    flex: 0 1 calc(100% / 3 * 2);
-    width: 100%;
-    max-width: calc(100% / 3 * 2);
-    height: 100%;
-  }
-
-  .section-project-image {
-    margin-bottom: 60px;
-    h4 {
-      text-align: right;
-    }
-
-    img {
-      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
-    }
-  }
-`;
+const Wrapper = styled.div``;

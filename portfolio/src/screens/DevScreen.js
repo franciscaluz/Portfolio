@@ -5,7 +5,6 @@ import BaseScreen from "./BaseScreen";
 import { projects } from "../constant";
 import { Row, Col, ListGroup, Button } from "reactstrap";
 import DevProjectCard from "../components/DevProjectCard";
-import { FiArrowLeft } from "react-icons/fi";
 
 const DevScreen = () => {
   const history = useHistory();
@@ -16,7 +15,6 @@ const DevScreen = () => {
           <div className="section-title-wrapper section-sticky">
             <div className="mb-3">
               <Button color="left-underline" onClick={() => history.goBack()}>
-                <FiArrowLeft />
                 Retour
               </Button>
             </div>
@@ -34,6 +32,7 @@ const DevScreen = () => {
                   .map((filteredProject, index) => {
                     const {
                       id,
+                      slug,
                       client,
                       project_logo,
                       project_color,
@@ -44,6 +43,7 @@ const DevScreen = () => {
                       <DevProjectCard
                         key={index}
                         id={id}
+                        slug={slug}
                         name={client}
                         description={details}
                         background={project_color}

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>eshop</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Fonts -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
+
+		<!-- Hover Effects -->
+		<link rel="stylesheet" href="assets/css/hover.css">
+		
+		<!-- Animate CSS -->
+		<link rel="stylesheet" href="assets/css/animate.min.css">
+
+		<!-- Custom css -->
+		<link rel="stylesheet" href="assets/css/custom.css">
+
+
+	</head>
+	<body>
+		
+		<!-- ##################### HEADER ########################## -->
+		<header>
+
+			<!-- ########## SECTION MAIN NAVIGATION ########## -->
+			<section class="fixed-top head-navigation">
+
+				<!-- SECONDARY NAVIGATION  -->
+				<nav id="secondary-navigation">
+					<div class="container-fluid p-0">
+						<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+							<div class="container px-5 px-lg-0 px-xl-0">
+								<h6>Jetez un coup d’oeil aux dernières tendances!</h6>
+							</div>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>						
+					</div>
+				</nav>
+
+				<!-- PRIMARY NAVIGATION  -->
+				<nav class="navbar navbar-expand-lg" id="main-navigation">
+
+					<!-- NAVIGATION LEFT -->
+					<ul class="navbar-nav col-1 col-lg-4 col-xl-4" id="nav-left">
+						<li class="nav-item">
+
+							<!-- MODAL -->
+							<span class="nav-link nav-icon hvr-shrink" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-bars"></i></span>
+
+							<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+
+								    	<div class="modal-header">
+								    		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          	<span aria-hidden="true"><i class="fas fa-times"></i></span>
+								        	</button>
+								    	</div><!-- /Modal Header -->
+
+								      	<div class="modal-body my-3">
+
+								      		<!-- Hidden Search / Screen Only -->							      		
+								      		<div class="input-group my-5 px-2 d-lg-none d-xl-none">
+												<input type="search" class="form-control" aria-label="Search" placeholder="Rechercher" aria-describedby="button-addon2">
+												<div class="input-group-append">
+											   		<button class="btn btn-outline-light ml-3 d-none" type="submit" id="button-addon2">Rechercher</button>
+												</div>
+											</div>
+
+											<!-- Visible Menu / All screens -->
+											<div class="list-group">
+												<a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#nav-collapse-eshop" role="button" aria-expanded="false" aria-controls="nav-collapse-eshop">E-shop<span class="float-right"><i class="fas fa-angle-down"></i></span></a><br class="clearfix">
+													<div class="collapse" id="nav-collapse-eshop">
+														<div class="list-group nav-submenu">
+															<a class="list-group-item-action" href="eshop.html"><u>Tout Voir</u></a>
+															<a class="list-group-item-action" href="eshop.html">Hauts</a>
+															<a class="list-group-item-action" href="eshop.html">Bas</a>
+															<a class="list-group-item-action" href="eshop.html">Accessoires</a>
+															<a class="list-group-item-action" href="eshop.html">Chaussures</a>
+														</div>
+													</div>
+												<a class="list-group-item list-group-item-action" href="#">Lookbook</a>
+												<a class="list-group-item list-group-item-action" href="marques.html">Marques</a>
+												<a class="list-group-item list-group-item-action d-none d-lg-block d-xl-block" href="contact.html">Contact</a>
+											</div>
+
+											<!-- Hidden Menu / Screen Only -->
+								      		<div class="list-group d-lg-none d-xl-none" id="hidden-menu">
+								      			
+												<a class="list-group-item list-group-item-action" data-toggle="collapse" href="#nav-collapse-account" role="button" aria-expanded="false" aria-controls="nav-collapse-account">Compte<span class="float-right"><i class="fas fa-angle-down"></i></span></a><br class="clearfix">
+													<div class="collapse" id="nav-collapse-account">
+														<div class="list-group nav-submenu">
+															<a class="list-group-item-action" href="#">Mon compte</a>
+															<a class="list-group-item-action" href="#">Créer un compte</a>
+													</div>
+												</div>
+												<a class="list-group-item list-group-item-action" href="#">Favoris</a>
+												<a class="list-group-item list-group-item-action" href="#">Panier</a>
+												<a class="list-group-item list-group-item-action" href="contact.html">Contact</a>
+												
+											</div>
+								    	</div><!-- /Modal Content -->
+
+								      	<div class="modal-footer">							      		
+								      		<div class="text-right" id="modal-social-links">
+								      			<h3 class="ms-dos text-white text-uppercase">Suivez-Nous</h3>
+												<a class="hvr-shrink" href="#"><i class="fab fa-facebook-f"></i></a>
+					 							<a class="hvr-shrink" href="#"><i class="fab fa-instagram"></i></a>
+					 							<a class="hvr-shrink" href="#"><i class="fab fa-twitter"></i></a>
+											</div>
+								      	</div><!-- /Modal Footer -->
+								    </div>
+								</div>
+							</div>
+						</li>							
+					</ul><!-- /NAVIGATION LEFT -->
+						
+					<!-- LOGO -->
+					<div class="text-center col-11 col-lg-4 col-xl-4">
+						<a class="navbar-brand ml-4 ml-lg-0 ml-xl-0" href="index.html"><img class="img-fluid" id="header-logo" src="assets/img/logo-black-center.png" alt=""></a>
+					</div>
+
+					<!-- NAVIGATION RIGHT -->
+					<ul class="navbar-nav col-4 justify-content-end d-none d-lg-flex d-xl-flex p-0" id="nav-right">
+						  
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle nav-icon hvr-shrink" data-toggle="dropdown" href="#" role="button" id="right-nav-dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+
+							<div class="dropdown-menu right-dropdown" aria-labelledby="right-nav-dropdown">
+						        <a class="dropdown-item" href="#">Mon Compte</a>
+						        <a class="dropdown-item" href="#">Créer un Compte</a>
+						        <div class="arrow-black"></div>
+						        <div class="arrow-white"></div>
+						    </div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav-icon hvr-shrink" href="#"><i class="fas fa-heart"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav-icon hvr-shrink" href="#"><i class="fas fa-shopping-bag"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav-icon hvr-shrink" href="#"><i class="fas fa-search"></i></a>
+						</li>							  
+					</ul><!-- /NAVIGATION RIGHT -->
+				</nav>
+		</section>			
+
+		<!-- ########## SECTION HEADER ########## -->
+		<section class="single-page-header" id="header-eshop">
+			<div data-section-id="1529685883649" class="parallax-banner flex">		
+				<div class="parallax-banner__text-container black-text">
+					<div class="container position-relative text-right">
+						<div class="parallax-banner__right-text parallax-text" data-parallax='{"x" : -800, "smoothness": 10}'>
+							<span class="ms-dos">E-SHOP</span>
+				    	</div>							
+					</div>				  					    
+				</div>
+			</div>
+		</section>
+
+		<!-- ##################### END HEADER ########################## -->
+		</header>
+
+		<main>
+
+			<!-- ########## SECTION ESHOP BREADCRUMBS ########## -->
+			<section class="my-5" id="eshop-breadcrumbs">
+				<div class="container">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb text-uppercase">
+					    	<li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+					    	<li class="breadcrumb-item active" aria-current="page">E-Shop</li>
+						</ol>
+					</nav>
+				</div>
+			</section>
+
+			<!-- ########## SECTION PRODUCTS ########## -->
+			<section id="products">
+				<div class="container my-5">
+					<div class="row">
+
+						<!-- FILTERS -->
+						<div class="col-12 col-lg-3 col-xl-3 mb-3 mb-lg-0 mb-xl-0">
+							<div class="filters-container sticky-top">
+								<a class="btn btn-default-light btn-block btn-lg text-left" id="filter-button" data-toggle="collapse" data-target="#eshop-filters-collapse" aria-expanded="false" aria-controls="eshop-filters-collapse"><h5 class="mb-0">FILTRES</h5></a>
+
+								<div class="collapse" id="eshop-filters-collapse">
+									<div class="card card-body">
+										<h6>TRIER PAR</h6>
+										<div class="input-group mb-4">
+											<select class="custom-select" id="inputGroupSelect02">
+												<option selected>Séléctionner</option>
+										    	<option value="1">Nouveautés</option>
+										    	<option value="2">Articles Soldés</option>
+										    	<option value="3">Prix Ordre Croissant</option>
+										    	<option value="4">Prix Ordre Décroissant</option>
+										  	</select>
+										</div>
+																		   
+										<form action="#" method="GET">
+										    <fieldset id="category-1">
+										    	<legend><h6>AFFINEZ VOTRE RECHERCHE</h6></legend>
+										    	<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="hauts" id="hauts">
+														<label class="form-check-label main-category" for="hauts">Hauts</label>
+													</div>
+											    <div class="form-row">									    	
+											    	<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="blouses">
+															<label class="form-check-label" for="blouses">Blouses</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="chemises">
+															<label class="form-check-label" for="chemises">Chemises</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="tops">
+															<label class="form-check-label" for="tops">Tops</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="tshirts">
+															<label class="form-check-label" for="tshirts">T-shirts</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="sweatshirts">
+															<label class="form-check-label" for="sweatshirts">Sweatshirts</label>
+														</div>
+													</div><!-- /Column -->
+														
+													<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="pulls">
+															<label class="form-check-label" for="pulls">Pulls</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="cardigans">
+															<label class="form-check-label" for="cardigans">Cardigans</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="vestes">
+															<label class="form-check-label" for="vestes">Vestes</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="blousons">
+															<label class="form-check-label" for="blousons">Blousons</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="hauts" id="manteaux">
+															<label class="form-check-label" for="manteaux">Manteaux</label>
+														</div>
+											    	</div>
+											    </div>
+											</fieldset>
+											<fieldset id="category-2">
+												<div class="form-row">
+													<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="robes" id="robes">
+															<label class="form-check-label main-category" for="robes">Robes</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="combinaisons" id="combinaisons">
+															<label class="form-check-label main-category" for="combinaisons">Combinaisons</label>
+														</div>
+													</div><!-- /Column -->
+												</div>
+											</fieldset>
+
+											<fieldset id="category-3">
+										    	<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="bas" id="bas">
+														<label class="form-check-label main-category" for="bas">Bas</label>
+													</div>
+											    <div class="form-row">										    	
+											    	<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="bas" id="jupes">
+															<label class="form-check-label" for="jupes">Jupes</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="bas" id="shorts">
+															<label class="form-check-label" for="shorts">Shorts</label>
+														</div>														
+													</div><!-- /Column -->
+														
+													<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="bas" id="pantalons">
+															<label class="form-check-label" for="pantalons">Pantalons</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="bas" id="jeans">
+															<label class="form-check-label" for="jeans">Jeans</label>
+														</div>
+											    	</div>
+											    </div>
+											</fieldset>
+											<fieldset id="category-4">
+										    	<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="chaussures" id="chaussures">
+													<label class="form-check-label main-category" for="chaussures">Chaussures</label>
+												</div>
+											    <div class="form-row">										    	
+											    	<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="chaussures" id="bottes">
+															<label class="form-check-label" for="bottes">Bottes</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="chaussures" id="bottines">
+															<label class="form-check-label" for="bottines">Bottines</label>
+														</div>											
+													</div><!-- /Column -->
+														
+													<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="chaussures" id="souliers">
+															<label class="form-check-label" for="souliers">Souliers</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="chaussures" id="baskets">
+															<label class="form-check-label" for="baskets">Baskets</label>
+														</div>
+											    	</div><!-- /Column -->
+											    </div>
+											</fieldset>
+
+											<fieldset id="category-5">
+										    	<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="accessoires" id="accessoires">
+														<label class="form-check-label main-category" for="accessoires">Accessoires</label>
+													</div>
+											    <div class="form-row">										    	
+											    	<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="accessoires" id="bijoux">
+															<label class="form-check-label" for="bijoux">Bijoux</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="accessoires" id="ceintures">
+															<label class="form-check-label" for="ceintures">Ceintures</label>
+														</div>														
+													</div><!-- /Column -->
+														
+													<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   		
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="accessoires" id="sacs">
+															<label class="form-check-label" for="sacs">Sacs</label>
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="accessoires" id="autres">
+															<label class="form-check-label" for="autres">Autres</label>
+														</div>
+											    	</div><!-- /Column -->
+											    </div>
+											</fieldset>
+										</form>										
+									</div><!-- / Card-body -->
+								</div><!-- /Collapse -->
+							</div><!-- /Filters Container -->
+
+							<aside class="mt-5 d-none d-lg-block d-xl-block">
+								<div id="publicity-eshop">
+									<div class="card mb-5" id="soldes">
+										  <img class="card-img" src="assets/img/header-index.png" alt="Card image">
+										  <div class="card-img-overlay text-center" style="background-color: rgba(255,255,255,0.5);">
+										  	<img src="assets/img/header-soldes.gif" alt="" class="img-fluid">
+										    <h6 class="text-uppercase">sur toutes les dernières pièces de collection</h6>
+										    <a class="btn btn-default" href="#" role="button">Voir articles soldés</a>
+										</div>
+									</div><!-- /Card -->
+								</div>			
+							</aside>											
+						</div><!-- /Column -->						
+
+						<!-- PRODUCT GRID -->
+						<div class="col-12 col-lg-9 col-xl-9 text-center" id="product-grid">
+							<div class="card-deck">
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-1.png" alt="Card image cap"></a>									
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-2.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-3.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+														
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-4.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-5.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-6.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+							</div><!-- /Card-deck -->
+
+							<div class="card-deck">
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-7.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-8.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-9.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-10.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-11.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+
+								<div class="card">
+									<a href="single-product.html"><img class="card-img-top" src="assets/img/product-12.png" alt="Card image cap"></a>	
+									<div class="card-body text-uppercase text-center">
+										<h5 class="card-title mb-0">Nom du produit</h5>
+										<p class="card-text thin">Marque du produit</p>
+										<p class="card-text price">$ 150 CAN</p>
+									</div>
+								</div><!-- /Card -->
+							</div>						
+
+							<!-- PAGINATION -->
+							<nav aria-label="Page navigation example">
+								<ul class="pagination pagination-lg justify-content-center">
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Previous">
+									        <span aria-hidden="true">&laquo;</span>
+									        <span class="sr-only">Previous</span>
+								      	</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+	        								<span class="sr-only">Next</span>
+      									</a>
+      								</li>
+								</ul>
+							</nav>
+								
+						</div><!-- /Column -->							
+					</div><!-- /Row -->						
+				</div><!-- Container -->					
+			</section>
+			
+			<!-- ########## SECTION ESHOP CAROUSEL ########## -->
+			<section id="eshop-trend-carousel">
+				
+				<!-- SECTION TITLE -->
+				<div class="container text-center" id="eshop-trend-title">
+					<h3 class="text-uppercase">#Sélection Tendance</h3>
+					<h3 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+				</div>
+				
+				<!-- CAROUSEL -->
+				<div class="container">
+				    <div id="eshop-carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+				        <div class="carousel-inner row w-100 mx-auto carousel-inner-eshop" role="listbox">
+				            <div class="carousel-item carousel-item-eshop col-md-3 active">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-1.png" alt="slide 1">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Caban Bleu Nuit</h6>
+									<p class="thin">Suncoo</p>
+				                </div>                
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-2.png" alt="slide 2">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Sweatshirt Café Labiche</h6>
+									<p class="thin">Maison Labiche</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-3.png" alt="slide 3">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Pantalon Jogging</h6>
+									<p class="thin">Sud Express</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-4.png" alt="slide 4">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Bottines Cuir Lisse</h6>
+									<p class="thin">Comptoir des Cotonniers</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-5.png" alt="slide 5">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Pull Maille Moulinée</h6>
+									<p class="thin">Maje</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-6.png" alt="slide 6">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Robe Midi Crêpe</h6>
+									<p class="thin">Caroll</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-7.png" alt="slide 7">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Blouson Fausse Fourrure</h6>
+									<p class="thin">Charlise</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-8.png" alt="slide 7">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Pull en Maille</h6>
+									<p class="thin">Bimba Y Lola</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-9.png" alt="slide 7">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Jupe Crayon</h6>
+									<p class="thin">Cop.Copine</p>
+				                </div>
+				            </div>
+				            <div class="carousel-item carousel-item-eshop col-md-3">
+				                <img class="img-fluid mx-auto d-block mb-4" src="assets/img/Carousel-10.png" alt="slide 7">
+				                <div class="text-center text-uppercase">
+				                	<h6 class="mb-0">Baskets en toile Beige </h6>
+									<p class="thin">Bimba & Lola</p>
+				                </div>
+				            </div>
+				        </div>
+				        <a class="carousel-control-prev" href="#eshop-carousel" role="button" data-slide="prev">
+				            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+				            <span class="sr-only">Previous</span>
+				        </a>
+				        <a class="carousel-control-next text-faded" href="#eshop-carousel" role="button" data-slide="next">
+				            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+				            <span class="sr-only">Next</span>
+				        </a>
+				    </div>
+				</div>				
+			</section>
+			
+		<!-- ##################### END MAIN CONTENT ########################## -->	
+		</main>
+		
+		<!-- ##################### FOOTER ########################## -->
+		<footer>
+
+			<!-- ########## SECTION HERO ########## -->
+			<section class="hero" id="homepage-hero">
+					<div class="container">
+						<div class="ticker">
+							<div class="simple-ticker" id="js-ticker-roll">
+								<ul>
+									<li>
+										<h2 class="p-0 m-0">Livraisons à domicile gratuites</h2>
+										<h6 class="subtitle p-0 m-0 text-uppercase">Dès 100$ d'achat | Expéditions sous 24h</h6>
+									</li>
+									<li>
+										<h2 class="p-0 m-0">Retours et Échanges offerts</h2>
+										<h6 class="subtitle p-0 m-0 text-uppercase">14 jours pour changer d'avis | Retours gratuits sous 10 jours</h6>
+									</li>
+									<li>
+										<h2 class="p-0 m-0">Paiements sécurisés</h2>
+										<h6 class="subtitle p-0 m-0 text-uppercase">Avec Paypal ou Cartes de Crédits | Politiques de confidentialité</h6>
+									</li>									
+								</ul>
+							</div><!-- /Simple-ticker -->								
+						</div><!-- Ticker -->						
+					</div><!-- /Container -->
+			</section>
+
+			<!-- ########## SECTION INSTABLOG ########## -->
+			<section id="instablog">
+
+				<!-- SECTION TITLE -->	
+				<div class="container">				
+					<div class="title text-center">
+						<h3>INSTABLOG#SEPTCINQ</h3>
+					</div>
+				</div>
+
+				<!-- IMAGE GRID-->
+				<div class="container-fluid">
+					<div class="row pb-1">
+
+						<!-- Column-1 -->
+						<div class="col-12 col-lg-4 col-xl-4">
+
+							<!-- Nested Row -->
+							<div class="row">
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-1.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-2.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-3.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-4.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- /Nested-Column -->								
+							</div><!-- /Nested Row -->
+						</div><!-- /Column 1 -->						
+
+						<!-- Column 2 -->
+						<div class="col-12 col-lg-4 col-xl-4 p-1">
+							<div class="card text-white card-1">
+								<img class="card-img" src="assets/img/instagram-5.png" alt="Image">	
+								<div class="card-img-overlay d-flex align-items-center justify-content-center text-center px-3 overlay-1">
+									<div class="card-text">
+										<span><i class="fab fa-instagram"></i></span>	
+										<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+										<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+									</div>											
+								</div>
+							</div><!-- /Card -->
+						</div><!-- Column 2 -->
+
+						<!-- Column-3 -->
+						<div class="col-12 col-lg-4 col-xl-4">
+
+							<!-- Nested Row -->
+							<div class="row">
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-6.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-7.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-8.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->
+
+								<div class="col-12 col-md-6 col-lg-6 col-xl-6 p-1">
+									<div class="card text-white card-1">
+										<img class="card-img" src="assets/img/instagram-9.png" alt="Image">	
+										<div class="card-img-overlay d-flex align-items-center text-center px-3 overlay-1">
+											<div class="card-text">
+												<span><i class="fab fa-instagram"></i></span>	
+												<p class="card-text mt-3 text-white"><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis sint optio, necessitatibus enim harum impedit id ab!"</em></p>
+												<span class="card-text date text-white text-uppercase">28 Octobre 2018</span>
+											</div>											
+										</div>
+									</div><!-- /Card -->									
+								</div><!-- Nested-Column -->								
+							</div><!-- /Nested Row -->
+						</div><!-- /Column 3-->
+
+					</div><!-- /Row -->										
+				</div><!-- /Container -->				
+			</section>
+
+			<!-- ########## SECTION NEWSLETTER ########## -->
+			<section class="parallax" id="newsletter">
+				<div class="container text-center">
+					<form class="form-inline justify-content-around" action="#" method="get">
+						<fieldset class="mx-auto">
+							<legend><h4 class="text-uppercase">Abonnez-vous à notre newsletter</h4></legend>
+							<label for="email">Email</label>
+							<div class="form-group">
+								<input type="email" class="form-control mb-3 mb-md-0 mb-lg-0 mb-xl-0" placeholder="Entrez Votre Email" id="email" aria-label="email" aria-describedby="email-submit" required>
+								<div class="ml-3">
+									<button class="btn btn-default-primary hvr-shrink btn-lg mb-3 mb-md-0 mb-lg-0 mb-xl-0" type="submit" id="email-submit">Je m'abonne</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</section>
+
+			<!-- ########## SECTION FOOTER CONTENT ########## -->
+			<section id="footer-content">
+				<div class="row align-items-center text-white">
+
+					<!-- FOOTER INFO -->
+					<div class="col-12 col-lg-5 col-xl-5" id="footer-logo">
+
+						<!-- Logo -->
+						<img class="img-fluid" src="assets/img/logo-footer-white.png" alt="logo-footer">
+
+						<!-- Adresse -->
+						<address class="my-4 pl-0 pl-lg-5 pl-xl-5">
+							1234, Blvd St-Laurent<br>
+					 		Montréal, Québec H2T 1K7 <br>
+					 		514.555.5555			 			
+			 			</address>
+
+			 			<!-- Social Links -->
+			 			<div class="pl-0 pl-lg-5 pl-xl-5" id="social-links">
+				 			<a class="hvr-shrink mr-2" href="#"><i class="fab fa-facebook"></i></a>
+				 			<a class="hvr-shrink mr-2" href="#"><i class="fab fa-instagram"></i></a>
+				 			<a class="hvr-shrink mr-2" href="#"><i class="fab fa-twitter"></i></a>
+				 			<a class="hvr-shrink" href="#"><i class="fas fa-envelope"></i></a>
+			 			</div>				
+					</div><!-- /Column -->
+
+					<!-- FOOTER NAVIGATION -->
+					<div class="col-12 col-lg-7 col-xl-7 pt-4">
+						<div class="row">
+
+							<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0 mb-xl-0">
+								<h6>BOUTIQUE E-SHOP</h6>
+								<ul class="list-unstyled">
+									<li><a href="eshop.html">Soldes</a></li>
+									<li><a href="eshop.html">Collections</a></li>
+									<li><a href="eshop.html">Hauts</a></li>
+									<li><a href="eshop.html">Bas</a></li>
+									<li><a href="eshop.html">Accessoires</a></li>
+									<li><a href="eshop.html">Chaussures</a></li>					
+								</ul>
+							</div>
+
+							<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0 mb-xl-0">
+								<h6>SERVICES</h6>
+								<ul class="list-unstyled">
+									<li><a href="#">Compte</a></li>
+									<li><a href="#">Panier</a></li>
+									<li><a href="#">Favoris</a></li>
+									<li><a href="marques.html">Marques</a></li>
+									<li><a href="contact.html">Nous Contacter</a></li>				
+								</ul>
+							</div>
+
+							<div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-5 mb-lg-0 mb-xl-0">
+								<h6>LIENS UTILES</h6>
+								<ul class="list-unstyled">
+									<li><a href="#">FAQ's</a></li>
+									<li><a href="#">Livraisons & Retours</a></li>
+									<li><a href="#">Mentions Légales</a></li>		
+									<li><a href="#">Conditions Générales de Ventes</a></li>
+									<li><a href="#">Politiques de Confidentialité</a></li>					
+								</ul>
+							</div><!-- /Column -->
+						</div><!-- Inner-Row -->					
+					</div><!-- /Column -->				
+				</div><!-- /Row -->
+			</section>
+
+			<!-- ########## SECTION COPYRIGHT ########## -->
+			<section id="footer-copyright">
+				<div class="text-center py-1">
+					<p>Copyright.2018 Septcinq | Tous droits réservés</p>
+				</div>
+			</section>
+			
+		<!-- ##################### END FOOTER ########################## -->
+		</footer>
+
+		<!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    	<!-- Ticker roll script -->
+    	<script src="assets/js/js-ticker-roll.js"></script>
+    	
+    	<!-- Parallax script -->		
+		<script src="assets/js/parallax.jquery.js"></script>
+		
+		<!-- Scroll Effect script -->
+		<script src="assets/js/jquery.parallax-scroll.js"></script>
+
+		<!-- Fixed Navigation -->
+		<script src="assets/js/fixed-navigation.js"></script>
+
+		<!-- Eshop Carousel -->
+		<script src="assets/js/eshop-carousel.js"></script>
+
+		<!-- Single Product Page Accordion -->
+		<script src="assets/js/single-page-accordion.js"></script>
+		
+		<!-- Brand Page scroll -->
+		<script src="assets/js/brand-page-scroll.js"></script>
+
+
+	</body>
+</html>

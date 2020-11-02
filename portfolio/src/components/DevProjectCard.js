@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 const DevProjectCard = ({
-  id,
+  slug,
   name,
   description,
   background,
@@ -13,7 +13,7 @@ const DevProjectCard = ({
 }) => {
   return (
     <Wrapper className="list-group-item">
-      <Link to={"/project/" + id} className="dev-project-card">
+      <Link to={`/project/${slug}`} className="dev-project-card">
         <div className="dev-project-card-img-wrapper">
           <div className="image-ratio-1">
             <div
@@ -30,7 +30,7 @@ const DevProjectCard = ({
         </div>
 
         <div className="dev-project-card-body">
-          <h6>{name}</h6>
+          <h3>{name}</h3>
           <p>{description}</p>
           <ul>
             {utilities.map((utility, index) => {
@@ -75,6 +75,10 @@ const Wrapper = styled.li`
   .dev-project-card-body {
     flex: 0 0 70%;
 
+    p {
+      font-size: 1.125em;
+    }
+
     ul {
       display: flex;
       align-items: center;
@@ -83,6 +87,7 @@ const Wrapper = styled.li`
 
       li {
         margin-right: 5px;
+        font-size: 1.125em;
       }
     }
   }

@@ -6,6 +6,8 @@ import SeptCinqProductPage from "./assets/images/project-septcinq-2.jpg";
 import SeptCinqItemPage from "./assets/images/project-septcinq-3.jpg";
 import RosemontLogo from "./assets/images/project-rosemont-logo.svg";
 import RosemontHomepage from "./assets/images/project-rosemont-1.jpg";
+import RosemontProductsPage from "./assets/images/project-rosemont-2.jpg";
+import RosemontProductPage from "./assets/images/project-rosemont-3.jpg";
 import UnityLogo from "./assets/images/project-unity-logo.svg";
 import UnityProject from "./assets/images/project-unity-1.jpg";
 import SochLogo from "./assets/images/project-soch-logo.svg";
@@ -17,6 +19,8 @@ import QubHomepage from "./assets/images/project-qub-2.jpg";
 import QubItemPage from "./assets/images/project-qub-3.jpg";
 import WikiLogo from "./assets/images/project-wiki-logo.svg";
 import WikiHomepage from "./assets/images/project-wiki-1.jpg";
+import WikiCharactersPage from "./assets/images/project-wiki-2.jpg";
+import WikiCharacterPage from "./assets/images/project-wiki-3.jpg";
 
 import Lucha1 from "./assets/images/project-Lucha-1.png";
 import Lucha1Insp1 from "./assets/images/project-Lucha-inspi-1.jpg";
@@ -106,8 +110,6 @@ export const projects = [
       { id: "2", name: "Page Produits", photo: `${SeptCinqProductPage}` },
       { id: "3", name: "Page Produit", photo: `${SeptCinqItemPage}` },
     ],
-    url_github: "",
-    url_vercel: "",
   },
   {
     id: "3",
@@ -120,25 +122,34 @@ export const projects = [
     project_logo: `${RosemontLogo}`,
     project_color: "#262626",
     details:
-      "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin de renforcer son compte actuel Etsy.",
-    tools: ["Illustrator", "Wordpress", "PHP", "Jquery"],
+      "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin de soutenir son compte actuel sur Etsy.",
+    tools: ["Illustrator", "Wordpress", "Css", "PHP", "Jquery"],
     photos: [
       { id: "1", name: "Page d'Accueil", photo: `${RosemontHomepage}` },
-      { id: "2", name: "Page produit", photo: `${SeptCinqProductPage}` },
+      { id: "2", name: "Page Produits", photo: `${RosemontProductsPage}` },
+      { id: "3", name: "Page Produit", photo: `${RosemontProductPage}` },
+    ],
+    urls: [
+      {
+        id: "1",
+        type: "etsy",
+        url: "https://www.etsy.com/ca-fr/shop/RosemontCG",
+      },
+      { id: "2", type: "link", url: "https://www.rosemontcg.com/" },
     ],
   },
   {
     id: "4",
     slug: "unity-design",
     client: "Unity Design",
-    client_type: "Entreprise de design",
+    client_type: "Branding, Développement et Design Web",
     project_cat: ["Design Web"],
     project_type: "Projet en cours",
     project_year: "2018",
     project_logo: `${UnityLogo}`,
     project_color: "#FCEA10",
     details:
-      "Projet personnel et exercice de style qui se voulait dans l'élaboration et l'intégration d'une maquette avec des mises en pages et jeux d'animations plus tendance 2018.",
+      "Projet personnel et exercice de style qui se voulait dans l'élaboration et l'intégration d'une maquette avec des mises en pages et jeux d'animations plus tendance.",
     tools: ["Figma"],
     photos: [
       { id: "1", name: "Page Projets", photo: `${UnityProject}` },
@@ -181,9 +192,19 @@ export const projects = [
       { id: "2", name: "Page d'Accueil", photo: `${QubHomepage}` },
       { id: "3", name: "Page Item", photo: `${QubItemPage}` },
     ],
-    url_github:
-      "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
-    url_vercel: "https://aec-front-end-eight.vercel.app/",
+    urls: [
+      {
+        id: "1",
+        type: "github",
+        url:
+          "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
+      },
+      {
+        id: "2",
+        type: "vercel",
+        url: "https://aec-front-end-eight.vercel.app/",
+      },
+    ],
   },
   {
     id: "7",
@@ -196,14 +217,26 @@ export const projects = [
     project_logo: `${WikiLogo}`,
     project_color: "#312651",
     details:
-      "Projet de formation visant les opération CRUD sur un open source fictif basé sur la série Rick & Morty",
+      "Projet de formation basé sur un open source fictif de la série Rick & Morty dans lequel on peut s'amuser à faire différentes opérations CRUD.",
     tools: ["Figma", "React", "JSX", "SASS"],
     photos: [
-      { id: "1", name: "homepage", photo: `${WikiHomepage}` },
-      { id: "2", name: "product page", photo: `${SochProductPage}` },
+      { id: "1", name: "Accueil", photo: `${WikiHomepage}` },
+      { id: "2", name: "Page Personnages", photo: `${WikiCharactersPage}` },
+      { id: "3", name: "Page Personnage", photo: `${WikiCharacterPage}` },
     ],
-    url_github: "",
-    url_vercel: "",
+    urls: [
+      {
+        id: "1",
+        type: "github",
+        url:
+          "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
+      },
+      {
+        id: "2",
+        type: "vercel",
+        url: "https://aec-front-end-eight.vercel.app/",
+      },
+    ],
   },
 ];
 
