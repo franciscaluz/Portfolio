@@ -25,21 +25,13 @@ const DevScreen = () => {
                 </div>
               </div>
               <Row>
-                <Col md={8} lg={9} className="ml-auto">
+                <Col xl={9} className="ml-auto">
                   <ListGroup className="list-group dev-project-card-list">
                     {projects
                         .filter((project) => project.project_cat.includes("Dev"))
                         .sort((a, b) => b.id - a.id)
                         .map((filteredProject, index) => {
-                          const {
-                            id,
-                            slug,
-                            client,
-                            project_logo,
-                            project_color,
-                            details,
-                            tools,
-                          } = filteredProject;
+                          const {id, slug, client, project_logo, project_color, details, tools } = filteredProject;
                           return (
                               <DevProjectCard
                                   key={index}
@@ -68,17 +60,21 @@ export default DevScreen;
 const Wrapper = styled.div`
   .section-dev {
     position: relative;
+    margin-top: 60px;
   }
+  
   .section-title-wrapper {
     position: sticky;
-    top: 60px;
+    top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 0;
     display: inline-block;
-    mix-blend-mode: multiply;
+    background: #ffffff;
   }
 
   .dev-project-card-list {
+    background: #ffffff;
+    
     li:nth-child(even) {
       .dev-project-card {
         flex-direction: row-reverse;
@@ -88,5 +84,20 @@ const Wrapper = styled.div`
         margin-left: 2em;
       }
     }
+  }
+  
+  @media (max-width : 767.98px) {
+      .dev-project-card-list {
+        li:nth-child(even) {
+          .dev-project-card {
+            flex-direction: column;
+          }
+          .dev-project-card-img-wrapper {
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 1em;
+          }
+        }
+      }
   }
 `;

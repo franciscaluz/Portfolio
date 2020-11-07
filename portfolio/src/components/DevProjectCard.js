@@ -3,43 +3,37 @@ import { withRouter } from "react-router-dom";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
-const DevProjectCard = ({
-  slug,
-  name,
-  description,
-  background,
-  logo,
-  utilities,
-}) => {
+const DevProjectCard = ({ slug, name, description, background, logo, utilities }) => {
+
   return (
-    <Wrapper className="list-group-item">
-      <Link to={`/project/${slug}`} className="dev-project-card">
-        <div className="dev-project-card-img-wrapper">
-          <div className="image-ratio-1">
-            <div
-              className="img-wrapper"
-              style={{
-                backgroundColor: `${background}`,
-              }}
-            >
-              <div className="dev-project-card-logo-wrapper">
-                <img src={logo} alt={name} className="img-fluid" />
+      <Wrapper className="list-group-item">
+        <Link to={`/project/${slug}`} className="dev-project-card">
+          <div className="dev-project-card-img-wrapper">
+            <div className="image-ratio-1">
+              <div
+                  className="img-wrapper"
+                  style={{
+                    backgroundColor: `${background}`,
+                  }}
+              >
+                <div className="dev-project-card-logo-wrapper">
+                  <img src={logo} alt={name} className="img-fluid" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="dev-project-card-body">
-          <h3>{name}</h3>
-          <p>{description}</p>
-          <ul>
-            {utilities.map((utility, index) => {
-              return <li key={index}>#{utility}</li>;
-            })}
-          </ul>
-        </div>
-      </Link>
-    </Wrapper>
+          <div className="dev-project-card-body">
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <ul>
+              {utilities.map((utility, index) => {
+                return <li key={index}>#{utility}</li>;
+              })}
+            </ul>
+          </div>
+        </Link>
+      </Wrapper>
   );
 };
 
@@ -59,8 +53,8 @@ const Wrapper = styled.li`
   }
 
   .dev-project-card-img-wrapper {
+    flex: 0 1 30%;
     width: 100%;
-    max-width: 14vw;
     margin-right: 2em;
   }
 
@@ -73,7 +67,7 @@ const Wrapper = styled.li`
   }
 
   .dev-project-card-body {
-    flex: 0 0 70%;
+    flex: 0 1 70%;
 
     p {
       font-size: 1.125em;
@@ -82,13 +76,27 @@ const Wrapper = styled.li`
     ul {
       display: flex;
       align-items: center;
-      list-style: none;
       padding-left: 0;
-
+      list-style: none;
+      
       li {
         margin-right: 5px;
         font-size: 1.125em;
       }
     }
+  }
+  
+  @media (max-width: 767.98px) {
+    .dev-project-card {
+      flex-direction: column;
+    }
+    
+    .dev-project-card-img-wrapper {
+      flex: 1 1 auto;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+
   }
 `;

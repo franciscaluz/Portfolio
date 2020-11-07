@@ -5,19 +5,19 @@ import { Container } from 'reactstrap';
 const Footer = () => {
     return (
         <Wrapper>
-            <Container>
-                <p>Projet Final - Francisca Vargas @ copyright.2020</p>
+            <Container fluid="md">
+                <p>FA/VS @ copyright.2020</p>
             </Container>
         </Wrapper>
     );
-}
+};
 
 export default Footer;
 const Wrapper = styled.div`
 @media(max-width:767.98px){
-    p{
+
+    p {
         font-size: 12px;
     }
 }
-
-`
+`;

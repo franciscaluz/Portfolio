@@ -6,6 +6,7 @@ $preformatted: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
 "Courier New", monospace;
 $black: #000000;
 $white: #ffffff;
+$dark: #1a1a1a;
 $body-color: #666;
 $pink: #ff2679;
 $transition-base: all 0.3s ease;
@@ -26,7 +27,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: $raleway;
   font-weight: 900;
   margin-bottom: 1.5em;
-  color: $black;
+  color: $dark;
 }
 
 .display-1 {
@@ -37,18 +38,15 @@ h1, h2, h3, h4, h5, h6,
   font-size: 7em;
 }
 
-h1,
-.h1 {
+h1, .h1 {
   font-size: 2.5em;
 }
 
-h3,
-.h3 {
+h3, .h3 {
   font-size: 1.5em; //24px
 }
 
-h4,
-.h4 {
+h4, .h4 {
   font-size: 1.25em; //20px
 }
 
@@ -71,13 +69,6 @@ h4, .h4 {
 }
 
 @media (max-width: 767.98px) {
-  .display-1 {
-    font-size: 4em;
-  }
-
-  .display-2 {
-    font-size: 3em;
-  }
 
   h3, .h3 {
     font-size: 1.125em; //18px
@@ -92,12 +83,12 @@ h4, .h4 {
 
 a {
   display: inline-flex;
-  color: $black;
+  color: inherit;
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
   &:hover {
-    color: $black;
+    color: inherit;
     text-decoration: none;
   }
 }
@@ -108,14 +99,14 @@ a {
 }
 
 .underlined {
-  @include underline(#000000);
+  @include underline($dark);
 }
 .underlined-reversed {
-  @include underline-reversed(#000000);
+  @include underline-reversed($dark);
 }
 
 .underlined-title {
-  @include underline-title(#ff2679);
+  @include underline-title($pink);
 }
 
 // TEXT HELPERS
@@ -125,11 +116,11 @@ a {
 }
 
 .text-stroke {
-  color: $black;
+  color: $dark;
   text-transform: unset;
   -webkit-text-fill-color: $white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $black;
+  -webkit-text-stroke-color: $dark;
 }
 
 .text-lg {
@@ -146,6 +137,10 @@ a {
 }
 
 //LAYOUT
+
+.headroom {
+  z-index: 100 !important;
+}
 
 .page-wrapper {
   height: auto !important;
@@ -166,13 +161,14 @@ a {
     left: 0;
     width: 100%;
     height: 0.25em;
-    background-color: $black;
+    background-color: $dark;
   }
 }
 
 .section-title-wrapper {
   position: relative;
   display: inline-block;
+  margin-top: 3em;
   margin-bottom: 3em;
 
   &.section-sticky {
@@ -181,6 +177,10 @@ a {
     left: 0;
     z-index: unset;
     display: inline-block;
+  }
+
+  .section-title-btn-container {
+    margin-bottom: 2em;
   }
 
   h1 {
@@ -212,11 +212,44 @@ a {
   }
 
   @media (max-width: 767.98px) {
+    margin-top: 2em;
+
+    .section-title-btn-container {
+      margin-bottom: 1em;
+    }
+
+    .section-title {
+      font-size: 10vw;
+    }
+
     .section-title-menu {
-      top: -1em;
-      right: -10%;
+      top: -4vw;
+      right: 0;
+
+      .display-3 {
+        font-size: 10vw;
+      }
     }
   }
+
+  @media (max-width: 575.98px) {
+    margin-top: 1em;
+
+    .section-title {
+      font-size: 15vw;
+    }
+
+    .section-title-menu {
+      top: -6vw;
+      right: 0;
+
+      .display-3 {
+        font-size: 15vw;
+      }
+    }
+  }
+
+
 }
 
 //BUTTONS
@@ -227,7 +260,7 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 400;
-  color: $black;
+  color: $dark;
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -254,7 +287,7 @@ a {
   }
 
   &.btn-left-underline {
-    @include underline-reversed(#000000);
+    @include underline($pink);
     justify-content: unset;
     border: 0;
     border-radius: 0;
@@ -264,6 +297,7 @@ a {
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: unset;
+
     &:hover {
       color: $pink;
     }
@@ -274,48 +308,6 @@ a {
   @include aspect-ratio(1, 1);
 }
 
-// FORMS
-.custom-control {
-  &.custom-switch {
-    .custom-control-label {
-      font-weight: 900;
-      text-transform: uppercase;
-
-      &:before,
-      &:after {
-        position: absolute;
-        right: -7em;
-        left: auto;
-      }
-
-      &:before {
-        top: -0.4em;
-        width: calc(6em + 6px);
-        height: calc(1.8em + 6px);
-        border: 3px solid $black;
-        border-radius: 0.25em;
-      }
-      &:after {
-        top: -0.08em;
-        right: -6.7em;
-        width: calc(3em - 6px);
-        height: calc(2em - 6px);
-        background: transparent;
-        border: 3px solid #000000;
-        border-radius: 0;
-      }
-    }
-    .custom-control-input:checked {
-      ~ .custom-control-label:before {
-        background: $pink;
-      }
-      ~ .custom-control-label:after {
-        background-color: #fff;
-        transform: translateX(-3.2em);
-      }
-    }
-  }
-}
 
 .section-project {
   position: relative;
@@ -458,6 +450,7 @@ a {
 }
 
 @media (max-width: 991.98px) {
+
   .section-project-content-wrapper {
     flex-direction: column;
   }
@@ -524,3 +517,9 @@ a {
     }
   }
 }
+
+
+
+
+
+
