@@ -88,9 +88,16 @@ export const projects = [
     project_logo: `${AbdmLogo}`,
     project_color: "#1ED2AF",
     details:
-      "Projet de formation visant la conception visuelle et graphique d'une maquette fonctionnelle.",
+        "Projet de formation visant la conception visuelle et graphique d'une maquette fonctionnelle.",
     tools: ["Illustrator"],
     photos: [{ id: "1", name: "Page d'Accueil", photo: `${AbdmHomepage}` }],
+    urls: [
+      {
+        id: "",
+        type: "",
+        url: "",
+      },
+    ],
   },
   {
     id: "2",
@@ -103,12 +110,20 @@ export const projects = [
     project_logo: `${SeptCinqLogo}`,
     project_color: "#C1FAFF",
     details:
-      "Projet de formation visant toutes les étapes depuis la conception et l'élaboration d'une maquette d'un site fictif d'une boutique de vêtements et de vente en ligne, jusqu'à son intégration finale.",
+        "Projet de formation visant toutes les étapes depuis la conception et l'élaboration d'une maquette d'un site fictif d'une boutique de vêtements et de vente en ligne, jusqu'à son intégration finale.",
     tools: ["Illustrator", "HTML", "CSS", "JQuery"],
     photos: [
       { id: "1", name: "Page d'Accueil", photo: `${SeptCinqHomepage}` },
       { id: "2", name: "Page Produits", photo: `${SeptCinqProductPage}` },
       { id: "3", name: "Page Produit", photo: `${SeptCinqItemPage}` },
+    ],
+    urls: [
+      {
+        id: "1",
+        type: "etsy",
+        url: "https://www.etsy.com/ca-fr/shop/RosemontCG",
+      },
+      { id: "2", type: "link", url: "https://www.rosemontcg.com/" },
     ],
   },
   {
@@ -122,7 +137,7 @@ export const projects = [
     project_logo: `${RosemontLogo}`,
     project_color: "#262626",
     details:
-      "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin de soutenir son compte actuel sur Etsy.",
+        "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin de soutenir son compte actuel sur Etsy.",
     tools: ["Illustrator", "Wordpress", "Css", "PHP", "Jquery"],
     photos: [
       { id: "1", name: "Page d'Accueil", photo: `${RosemontHomepage}` },
@@ -149,7 +164,7 @@ export const projects = [
     project_logo: `${UnityLogo}`,
     project_color: "#FCEA10",
     details:
-      "Projet personnel et exercice de style qui se voulait dans l'élaboration et l'intégration d'une maquette avec des mises en pages et jeux d'animations plus tendance.",
+        "Projet personnel et exercice de style qui se voulait dans l'élaboration et l'intégration d'une maquette avec des mises en pages et jeux d'animations plus tendance.",
     tools: ["Figma"],
     photos: [
       { id: "1", name: "Page Projets", photo: `${UnityProject}` },
@@ -167,7 +182,7 @@ export const projects = [
     project_logo: `${SochLogo}`,
     project_color: "#DDC3C4",
     details:
-      "Soch est une petite entreprise privée de pâtisseries et desserts faits-maison pour laquelle j'ai élaboré une maquette fictive pour faciliter une éventuelle expansion vers la vente en ligne et augmenter leur visibilité.",
+        "Soch est une petite entreprise privée de pâtisseries et desserts faits-maison pour laquelle j'ai élaboré une maquette fictive pour faciliter une éventuelle expansion vers la vente en ligne et augmenter leur visibilité.",
     tools: ["Figma"],
     photos: [
       { id: "1", name: "Page d'Accueil", photo: `${SochHomepage}` },
@@ -185,7 +200,7 @@ export const projects = [
     project_logo: `${QubLogo}`,
     project_color: "#FF21B2",
     details:
-      "Projet de formation d'un site fictif de streaming de musique, basé sur la dynamisation de la connexion utilisateur, les données type object, ainsi que les différents routages.",
+        "Projet de formation d'un site fictif de streaming de musique, basé sur la dynamisation de la connexion utilisateur, les données type object, ainsi que les différents routages.",
     tools: ["Figma", "React", "JSX", "SASS"],
     photos: [
       { id: "1", name: "Page Connexion", photo: `${QubLogin}` },
@@ -197,7 +212,7 @@ export const projects = [
         id: "1",
         type: "github",
         url:
-          "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
+            "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
       },
       {
         id: "2",
@@ -217,7 +232,7 @@ export const projects = [
     project_logo: `${WikiLogo}`,
     project_color: "#312651",
     details:
-      "Projet de formation basé sur un open source fictif de la série Rick & Morty dans lequel on peut s'amuser à faire différentes opérations CRUD.",
+        "Projet de formation basé sur un open source fictif de la série Rick & Morty dans lequel on peut s'amuser à faire différentes opérations CRUD.",
     tools: ["Figma", "React", "JSX", "SASS"],
     photos: [
       { id: "1", name: "Accueil", photo: `${WikiHomepage}` },
@@ -229,7 +244,7 @@ export const projects = [
         id: "1",
         type: "github",
         url:
-          "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
+            "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub",
       },
       {
         id: "2",

@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import { Link } from "react-router-dom";
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
+import { Container, UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import { projects } from "../constant";
 
 const PortfolioScreen = () => {
   return (
     <BaseScreen>
+      <Container fluid="md">
       <Wrapper>
         <section className="section-portfolio">
           <div>
@@ -113,6 +114,7 @@ const PortfolioScreen = () => {
           </div>
         </section>
       </Wrapper>
+      </Container>
     </BaseScreen>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Container } from "reactstrap";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
@@ -9,7 +8,7 @@ const BaseScreen = ({ children }) => {
     <Wrapper>
       <Navigation />
       <div className="page-wrapper">
-        <Container fluid="md">{children}</Container>
+        {children}
       </div>
       <Footer />
     </Wrapper>
