@@ -3,13 +3,13 @@ import styled from 'styled-components/macro'
 import { Container } from 'reactstrap';
 
 const Footer = () => {
-    return (
-        <Wrapper>
-            <Container fluid="md">
-                <p>FA/VS @ copyright.2020</p>
-            </Container>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Container fluid="md">
+        <p>FA/VS @ copyright.2020</p>
+      </Container>
+    </Wrapper>
+  );
 };
 
 export default Footer;
