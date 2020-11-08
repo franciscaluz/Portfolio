@@ -3,8 +3,8 @@ import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import {Button, Container} from "reactstrap";
-import { FiGlobe, FiGithub } from "react-icons/fi";
-import { SiEtsy } from "react-icons/si";
+import { FaEtsy } from "react-icons/fa";
+import { RiGithubLine, RiLinksLine  } from "react-icons/ri";
 import { projects } from "../constant";
 
 const ProjectScreen = () => {
@@ -93,28 +93,28 @@ const ProjectScreen = () => {
                                   {link.type === "etsy" ? (
                                       <span>
                                 <span className="section-url-icon">
-                                  <SiEtsy />
+                                  <FaEtsy />
                                 </span>
                                 Suivre ce lien
                               </span>
                                   ) : link.type === "github" ? (
                                       <span>
                                 <span className="section-url-icon">
-                                  <FiGithub />
+                                  <RiGithubLine />
                                 </span>
                                 Lien GitHub
                               </span>
                                   ) : link.type === "vercel" ? (
                                       <span>
                                 <span className="section-url-icon">
-                                  <FiGlobe />
+                                  <RiLinksLine />
                                 </span>
                                 Voir le projet
                               </span>
                                   ) : link.type === "link" ?(
                                       <span>
                                 <span className="section-url-icon">
-                                  <FiGlobe />
+                                  <RiLinksLine />
                                 </span>
                                 Aller sur le site
                               </span>

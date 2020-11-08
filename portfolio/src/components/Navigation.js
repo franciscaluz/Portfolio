@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 import NavigationModal from "./NavigationModal";
 import { Navbar, NavbarBrand, Nav, NavItem, Container } from "reactstrap";
-//import { TiSocialFacebookCircular,  TiSocialLinkedinCircular, TiSocialGithubCircular, } from "react-icons/ti";
 import ReactLogo from "../assets/images/logo.svg";
 import Headroom from "react-headroom";
 
@@ -60,7 +59,7 @@ const Wrapper = styled.div`
   }
 
   .nav-link {
-    color: #000000;
+    color: #1a1a1a;
     padding: 0 !important;
     font-weight: 900;
     text-transform: uppercase;
