@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 import BaseScreen from "./BaseScreen";
@@ -10,6 +10,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const GraphicDesignScreen = () => {
   const history = useHistory();
+
+  const [ filtre, setFiltre ] = useState(false)
+  const [graphics, setGraphics] = useState([
+    // initial graphics state
+  ]);
+
   const revealRefs = useRef([]);
   revealRefs.current = [];
   const breakpointColumnsObj = {
@@ -55,6 +61,15 @@ const GraphicDesignScreen = () => {
     }
   };
 
+  useEffect(() => {
+    if (filtre) {
+      const sortedGraphics = graphics.sort((a, b) => b.id - a.id);
+      const filteredGraphics = sortedGraphics.filter(project => project.name !== 'inspiration');
+      setGraphics(filteredGraphics)
+    } else {
+      setGraphics( /* initial graphics state */ )
+    }
+  }, [filtre]);
   return (
       <BaseScreen>
         <Container fluid="md">
@@ -88,10 +103,10 @@ const GraphicDesignScreen = () => {
                     <div className="section-graphic-filter-content">
                       <h6>Filtrer</h6>
                       <div>
-                        <input id="toggle-on" className="toggle toggle-left" name="toggle" value="false" type="radio" checked/>
-                        <label htmlFor="toggle-on" className="filter-btn">Non</label>
-                        <input id="toggle-off" className="toggle toggle-right" name="toggle" value="true" type="radio"/>
-                        <label htmlFor="toggle-off" className="filter-btn">Oui</label>
+                        <input id="toggle-off" className="toggle toggle-left" name="toggle" value="false" type="radio" checked/>
+                        <label htmlFor="toggle-off" className="filter-btn">Non</label>
+                        <input id="toggle-on" className="toggle toggle-right" name="toggle" value="true" type="radio"/>
+                        <label htmlFor="toggle-on" className="filter-btn">Oui</label>
                       </div>
                     </div>
                   </div>
