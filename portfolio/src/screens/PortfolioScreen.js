@@ -11,10 +11,10 @@ const PortfolioScreen = () => {
       <Container fluid="md">
         <Wrapper>
           <section className="section-portfolio">
-            <div>
-              <h6 className="section-name">Portfolio</h6>
-            </div>
             <div className="section-title-wrapper">
+              <div className="section-title-button-container">
+                <h6 className="section-name">Portfolio</h6>
+              </div>
               <h1 className="section-title display-2">Projets</h1>
               <PortfolioAccordion/>
             </div>

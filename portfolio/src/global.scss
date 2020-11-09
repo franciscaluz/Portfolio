@@ -513,194 +513,32 @@ button {
   }
 }
 
-////////
+//h1.typewriter {
+//  display: inline-block;
+//  color: #1a1a1a;
+//  overflow: hidden; /* Ensures the content is not revealed until the animation */
+//  border-right: .15em solid transparent; /* The typwriter cursor */
+//  white-space: nowrap; /* Keeps the content on a single line */
+//  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+//  letter-spacing: 0; /* Adjust as needed */
+//  animation: typing .75s steps(8, end), blink-caret 0.75s step-end infinite;
+//}
+//
+///* The typing effect */
+//@keyframes typing {
+//  from { width: 0 }
+//  to { width: 100% }
+//}
+//
 
-
-.accordion-wrapper {
-  display: flex;
-  justify-content: space-between;
+@keyframes blink-caret {
+  from, to { border-color: $dark }
+  50% { border-color: transparent }
 }
 
-.accordion-button-wrapper {
-  display: block;
-  flex: 0 0 40%;
-  width: 100%;
-  text-align: right;
+.blink {
+  animation: blink-caret 0.75s step-end infinite;
 }
-
-.accordion-button {
-  position: relative;
-  display: inline-flex;
-  margin-bottom: 0;
-  background: transparent;
-  border: 0;
-  line-height: 0.7;
-  cursor: pointer;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0.25em;
-    margin-top: 0;
-    transition: 0.4s ease;
-    opacity: 0;
-    background-color: #ff2679;
-    mix-blend-mode: darken;
-  }
-
-  &:hover {
-    color: #ff2679;
-    text-decoration: none;
-    &:before,
-    &:after {
-      left: 0;
-      width: 100%;
-      opacity: 1;
-    }
-  }
-
-  &.collapsed {
-    &:before,
-    &:after {
-      width: 0;
-      opacity: 0;
-    }
-  }
-
-  &.expanded {
-    &:before,
-    &:after {
-      width: 100%;
-      opacity: 1;
-    }
-  }
-}
-.accordion-item-wrapper {
-  position: relative;
-  flex: 0 1 calc(60% - 3em);
-  width: 100%;
-  max-width: calc(60% - 3em);
-}
-
-.accordion-item {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 1;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: left;
-  border-left: 3px solid #1a1a1a;
-  transform: translate(0,-30px);
-  transition: all 0.4s ease;
-
-  &.collapsed {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &.expanded {
-    transform: translate(0, 0);
-    visibility: visible;
-  }
-}
-
-.accordion-item-link {
-  margin-bottom: 0.25em;
-  padding-left: 1em;
-  font-weight: 300;
-  font-size: 0.825em;
-  transition: 0.3s ease;
-
-  &:hover {
-    font-weight: 400;
-    transform: translateX(1em)
-  }
-}
-
-@media(max-width: 1199.98px) {
-  .accordion-button-wrapper {
-    display: block;
-    flex: 0 0 48%;
-    width: 100%;
-    text-align: right;
-  }
-
-  .accordion-item-wrapper {
-    position: relative;
-    flex: 0 1 calc(50% - 2em);
-    max-width: calc(50% - 2em);
-  }
-}
-
-@media(max-width: 991.98px) {
-  .accordion-button-wrapper {
-    display: block;
-    flex: 0 0 51%;
-    width: 100%;
-  }
-}
-
-@media(max-width: 767.98px) {
-  .accordion-button-wrapper {
-    flex: 0 0 40%;
-    width: 100%;
-
-    button {
-      font-size: 10vw;
-    }
-  }
-
-  .accordion-item-wrapper {
-    flex: 0 1 calc(60% - 2em);
-    max-width: calc(60% - 2em);
-  }
-
-}
-
-@media(max-width: 576.98px) {
-  .accordion-wrapper {
-    flex-direction: column;
-  }
-  .accordion-button-wrapper {
-    display: block;
-    text-align: left;
-    flex: 0 0 100%;
-    width: 100%;
-
-    button {
-      font-size: 15vw;
-    }
-  }
-  .accordion-item-wrapper {
-    flex: 1 0 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 1px;
-  }
-
-  .accordion-item {
-    position: static;
-    height: 0;
-    border-left: none;
-
-    &.expanded {
-      height: 100%;
-      padding: 1em 0;
-    }
-  }
-
-}
-
-
-
-
 
 
 
