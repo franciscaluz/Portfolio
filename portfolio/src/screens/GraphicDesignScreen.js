@@ -10,11 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const GraphicDesignScreen = () => {
   const history = useHistory();
-
-  const [ filtre, setFiltre ] = useState(false)
-  const [graphics, setGraphics] = useState([
-    // initial graphics state
-  ]);
+  const [graphics, setGraphics] = useState(graphic);
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
@@ -61,15 +57,15 @@ const GraphicDesignScreen = () => {
     }
   };
 
-  useEffect(() => {
+  const handleFiltre = (filtre) => {
     if (filtre) {
-      const sortedGraphics = graphics.sort((a, b) => b.id - a.id);
-      const filteredGraphics = sortedGraphics.filter(project => project.name !== 'inspiration');
+      const filteredGraphics = graphic.filter(project => project.name !== 'Inspiration');
       setGraphics(filteredGraphics)
     } else {
-      setGraphics( /* initial graphics state */ )
-    }
-  }, [filtre]);
+      setGraphics(graphic)
+    }  
+  }
+
   return (
       <BaseScreen>
         <Container fluid="md">
@@ -103,10 +99,11 @@ const GraphicDesignScreen = () => {
                     <div className="section-graphic-filter-content">
                       <h6>Filtrer</h6>
                       <div>
-                        <input id="toggle-off" className="toggle toggle-left" name="toggle" value="false" type="radio" checked/>
-                        <label htmlFor="toggle-off" className="filter-btn">Non</label>
-                        <input id="toggle-on" className="toggle toggle-right" name="toggle" value="true" type="radio"/>
-                        <label htmlFor="toggle-on" className="filter-btn">Oui</label>
+                        <input id="toggle-off" className="toggle toggle-left" name="toggle" defaultChecked={true} type="radio"/>
+                        <label htmlFor="toggle-off" className="filter-btn" onClick={() => handleFiltre(false)} >Non</label>
+                        
+                        <input id="toggle-on" className="toggle toggle-right" name="toggle" type="radio" />
+                        <label htmlFor="toggle-on" className="filter-btn" onClick={() => handleFiltre(true)}>Oui</label>
                       </div>
                     </div>
                   </div>
@@ -120,8 +117,8 @@ const GraphicDesignScreen = () => {
                     className="my-masonry-grid"
                     columnClassName="my-masonry-grid_column"
                 >
-                  {graphic
-                      .sort((a, b) => b.id - a.id)
+                  {graphics
+                 .sort((a, b) => b.id - a.id)
                       .map((item, index) => {
                         return (
                             <img

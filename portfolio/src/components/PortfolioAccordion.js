@@ -25,11 +25,12 @@ const PortfolioAccordion = () => {
   };
 
   const Accordion = ({ defaultIndex, onItemClick, children }) => {
-    const [bindIndex, setBindIndex] = useState(defaultIndex);
+    const [openPortfolio, setOpenPortfolio] = useState(defaultIndex);
 
     const changeItem = itemIndex => {
       if (typeof onItemClick === 'function') onItemClick(itemIndex);
-      if (itemIndex !== bindIndex) setBindIndex(itemIndex);
+      if (itemIndex !== openPortfolio) setOpenPortfolio(itemIndex);
+      else setOpenPortfolio(0)
     };
     const items = children.filter(item => item.type.name === 'AccordionItem');
 
@@ -37,7 +38,8 @@ const PortfolioAccordion = () => {
       <>
         {items.map(({ props }) => (
           <AccordionItem
-            isCollapsed={bindIndex !== props.index}
+            key={props.index}
+            isCollapsed={openPortfolio !== props.index}
             label={props.label}
             handleClick={() => changeItem(props.index)}
             children={props.children}
@@ -49,7 +51,7 @@ const PortfolioAccordion = () => {
 
   return (
     <Wrapper>
-      <Accordion defaultIndex="1" onItemClick={console.log}>
+      <Accordion defaultIndex="0" onItemClick={console.log} >
         <AccordionItem label="Dev" index="1">
           {projects
             .filter((project) => project.project_cat.includes("Dev"))
@@ -155,13 +157,13 @@ width: 100%;
     }
   }
 
-  &.collapsed {
+/*   &.collapsed {
     &:before,
     &:after {
       width: 0;
       opacity: 0;
     }
-  }
+  } */
 
   &.expanded {
     &:before,
