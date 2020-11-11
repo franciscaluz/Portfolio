@@ -2,18 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components/macro";
 import { Container } from "reactstrap";
 import gsap from "gsap";
+import { TweenMax} from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-/* {graphic.map((item, index) => {
-    return (
-      <span className="img-fluid">
-        {item.photos.map((c, i) => (
-          <img src={c.photo} alt="project" className="img-fluid" />
-        ))}
-      </span>
-    );
-  })} */
 
 const sections = [
   {
@@ -59,6 +51,16 @@ const TestScreen = () => {
     const color = background !== "#262626" ? "#262626" : "#1b4943";
     setBackground(color);
   };
+
+  // useEffect(() => {
+  //   gsap.to('.circle', {
+  //     x: '+=100vw',
+  //     rotation: 360,
+  //     duration: 7,
+  //     ease: "power1.out",
+  //   });
+  //
+  // }, []);
 
   useEffect(() => {
     gsap.to(headerRef.current, {
@@ -108,6 +110,25 @@ const TestScreen = () => {
     }
   };
 
+  const purple = useRef(null);
+  const pink = useRef(null);
+  useEffect(() => {
+    TweenMax.fromTo(
+      [purple.current],
+      6,
+      { x: '0', rotation: '360' },
+      { x: '100%', yoyo: true, repeat: -1 }
+    );
+    TweenMax.fromTo(
+      [pink.current],
+      4,
+
+      { x: '100vw', rotation: '360'},
+      { x: '85vw', rotation: '-360', repeat: -1, yoyo: true},
+
+
+    );
+  }, []);
   return (
     <Wrapper>
       <Container>
@@ -124,12 +145,19 @@ const TestScreen = () => {
           ))}
         </main>
       </Container>
+
+      <div className="circle-wrapper">
+        <div className="circle" ref={pink}>something</div>
+        <div className="circle2" ref={purple}>something</div>
+      </div>
     </Wrapper>
   );
 };
 export default TestScreen;
 
 const Wrapper = styled.div`
+  position: relative;
+
   .App {
     text-align: center;
   }
@@ -179,5 +207,31 @@ const Wrapper = styled.div`
     align-content: center;
     justify-content: center;
     flex-direction: column;
+  }
+  .circle-wrapper {
+  position: fixed:
+  bottom: 15%;
+  right: 15%;
+  background: pink;
+  width: 100%;
+  height: 100vh;
+  }
+  
+  .circle {
+  position: relative;
+  right: 15%;
+  background: #1a1a1a;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  }
+  
+    .circle2 {
+  position: relative;
+  right: 0;
+  background: #1a1a1a;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
   }
 `;

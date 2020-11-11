@@ -26,27 +26,27 @@ const GraphicDesignScreen = () => {
 
     revealRefs.current.forEach((el, index) => {
       gsap.fromTo(
-          el,
-          {
-            autoAlpha: 0,
-            y: 30,
-            delay: 0.7,
+        el,
+        {
+          autoAlpha: 0,
+          y: 30,
+          delay: 0.7,
+        },
+        {
+          duration: 0.6,
+          autoAlpha: 1,
+          ease: "power1.inOut",
+          y: 0,
+          scrollTrigger: {
+            id: `section-${index + 1}`,
+            trigger: el,
+            scrub: 1,
+            start: "top 95%",
+            end: "top 60%",
+            toggleActions: "restart pause reverse reset",
+            markers: false,
           },
-          {
-            duration: 0.6,
-            autoAlpha: 1,
-            ease: "power1.inOut",
-            y: 0,
-            scrollTrigger: {
-              id: `section-${index + 1}`,
-              trigger: el,
-              scrub: 1,
-              start: "top 95%",
-              end: "top 60%",
-              toggleActions: "restart pause reverse reset",
-              markers: false,
-            },
-          }
+        }
       );
     });
   }, []);
@@ -63,79 +63,79 @@ const GraphicDesignScreen = () => {
       setGraphics(filteredGraphics)
     } else {
       setGraphics(graphic)
-    }  
-  }
+    }
+  };
 
   return (
-      <BaseScreen>
-        <Container fluid="md">
-          <Wrapper>
+    <BaseScreen>
+      <Container fluid="md">
+        <Wrapper>
 
-            <section className="section-graphic">
+          <section className="section-graphic">
 
-              <section className="section-title-wrapper section-sticky">
+            <section className="section-title-wrapper section-sticky">
 
-                <div className="section-title-btn-container">
-                  <Button color="left-underline" onClick={() => history.goBack()}>
-                    Retour
-                  </Button>
-                </div>
+              <div className="section-title-btn-container">
+                <Button color="left-underline" onClick={() => history.goBack()}>
+                  Retour
+                </Button>
+              </div>
 
-                <div className="section-title-content">
+              <div className="section-title-content">
 
-                  <div className="section-title-content-inner">
+                <div className="section-title-content-inner">
 
-                    <h1 className="section-title display-3">Projets</h1>
+                  <h1 className="section-title display-3">Projets</h1>
 
-                    <div className="section-title-menu">
-                      <h1 className="display-3 text-stroke">Design</h1>
-                      <h1 className="display-3 text-stroke mb-0">Graphique</h1>
-                      <span className="text-thin">& inspirations</span>
-                    </div>
-
+                  <div className="section-title-menu">
+                    <h1 className="display-3 text-stroke">Design</h1>
+                    <h1 className="display-3 text-stroke mb-0">Graphique</h1>
+                    <span className="text-thin">& inspirations</span>
                   </div>
 
-                  <div className="section-graphic-filter-wrapper">
-                    <div className="section-graphic-filter-content">
-                      <h6>Filtrer</h6>
-                      <div>
-                        <input id="toggle-off" className="toggle toggle-left" name="toggle" defaultChecked={true} type="radio"/>
-                        <label htmlFor="toggle-off" className="filter-btn" onClick={() => handleFiltre(false)} >Non</label>
-                        
-                        <input id="toggle-on" className="toggle toggle-right" name="toggle" type="radio" />
-                        <label htmlFor="toggle-on" className="filter-btn" onClick={() => handleFiltre(true)}>Oui</label>
-                      </div>
+                </div>
+
+                <div className="section-graphic-filter-wrapper">
+                  <div className="section-graphic-filter-content">
+                    <h6>Filtrer</h6>
+                    <div>
+                      <input id="toggle-off" className="toggle toggle-left" name="toggle" defaultChecked={true} type="radio"/>
+                      <label htmlFor="toggle-off" className="filter-btn" onClick={() => handleFiltre(false)} >Non</label>
+
+                      <input id="toggle-on" className="toggle toggle-right" name="toggle" type="radio" />
+                      <label htmlFor="toggle-on" className="filter-btn" onClick={() => handleFiltre(true)}>Oui</label>
                     </div>
                   </div>
                 </div>
-              </section>
-
-              <section className="section-graphic-content">
-
-                <Masonry
-                    breakpointCols={breakpointColumnsObj}
-                    className="my-masonry-grid"
-                    columnClassName="my-masonry-grid_column"
-                >
-                  {graphics
-                 .sort((a, b) => b.id - a.id)
-                      .map((item, index) => {
-                        return (
-                            <img
-                                key={index}
-                                src={item.photo}
-                                alt="project"
-                                className="img-fluid"
-                                ref={addToRefs}
-                            />
-                        );
-                      })}
-                </Masonry>
-              </section>
+              </div>
             </section>
-          </Wrapper>
-        </Container>
-      </BaseScreen>
+
+            <section className="section-graphic-content">
+
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column"
+              >
+                {graphics
+                  .sort((a, b) => b.id - a.id)
+                  .map((item, index) => {
+                    return (
+                      <img
+                        key={index}
+                        src={item.photo}
+                        alt="project"
+                        className="img-fluid"
+                        ref={addToRefs}
+                      />
+                    );
+                  })}
+              </Masonry>
+            </section>
+          </section>
+        </Wrapper>
+      </Container>
+    </BaseScreen>
   );
 };
 

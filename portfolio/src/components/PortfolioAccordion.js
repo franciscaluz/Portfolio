@@ -210,7 +210,7 @@ width: 100%;
   margin-bottom: 0.25em;
   padding-left: 1em;
   font-weight: 300;
-  font-size: 0.825em;
+  font-size: 0.9em;
   transition: 0.3s ease;
 
   &:hover {
@@ -263,6 +263,7 @@ width: 100%;
   .accordion-wrapper {
     flex-direction: column;
   }
+  
   .accordion-button-wrapper {
     display: block;
     text-align: left;
@@ -273,6 +274,7 @@ width: 100%;
       font-size: 15vw;
     }
   }
+  
   .accordion-item-wrapper {
     display: flex;
     flex-direction: column;
@@ -289,7 +291,7 @@ width: 100%;
     width: 100%;
     border-left: none;
     overflow: hidden;
-    transition: flex 0.4s ease-in, opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    transition: flex 0.3s ease-in, opacity 0.4s ease, visibility 0.3s ease, transform 0.3s ease;
 
     &.collapsed {
       flex-grow: 0;
