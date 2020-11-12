@@ -1,4 +1,5 @@
 // MIXINS & EFFECTS
+
 @mixin underline($color) {
   position: relative;
   text-decoration: none;
@@ -112,11 +113,45 @@
   }
 }
 
-.rotate {
-  animation: rotate 3.5s linear infinite;
+.image-ratio-1 {
+  @include aspect-ratio(1, 1);
 }
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
+
+// CURSOR BLINK
+
+@keyframes blink-caret {
+  from, to { border-color: #1a1a1a }
+  50% { border-color: transparent }
+}
+
+.blink {
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+// ROTATE MESSAGE
+
+.rotate-in {
+  animation: rotateIn ease 10s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotateIn{
+  0% {
+    opacity:0;
+    transform:  translate(308px,0px)  rotate(360deg) ;
+  }
+  20% {
+    opacity:1;
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  80% {
+    opacity:1;
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    opacity:0;
+    transform:  translate(306px,0px)  rotate(360deg) ;
   }
 }
+

@@ -68,7 +68,7 @@ const PortfolioAccordion = () => {
                 </Link>
               );
             })}
-          <Link to="/dev" className="accordion-item-link">
+          <Link to="/dev" className="accordion-item-link primary-link">
             Voir tous les projets Dev
           </Link>
         </AccordionItem>
@@ -90,14 +90,14 @@ const PortfolioAccordion = () => {
                 </Link>
               );
             })}
-          <Link to="/web-design" className="accordion-item-link">
-            Voir tous les projets Design Web
+          <Link to="/web-design" className="accordion-item-link primary-link">
+            Voir tous les projets Web
           </Link>
         </AccordionItem>
 
         <AccordionItem label="Graph" index="3">
-          <Link to="/graphic-design" className="accordion-item-link">
-            Voir tous les projets Design Graphiques
+          <Link to="/graphic-design" className="accordion-item-link mb-0">
+            Voir tous les projets Graphiques
           </Link>
         </AccordionItem>
       </Accordion>
@@ -209,13 +209,18 @@ width: 100%;
 .accordion-item-link {
   margin-bottom: 0.25em;
   padding-left: 1em;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.9em;
   transition: 0.3s ease;
 
   &:hover {
-    font-weight: 400;
     transform: translateX(1em)
+  }
+  
+  &.primary-link {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    
   }
 }
 

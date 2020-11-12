@@ -2,17 +2,17 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-//Text Intro
-export const textIntro = (elem) => {
-  gsap.from(elem, {
-    xPercent: -20,
-    opacity: 0,
-    stagger: 0.2,
-    duration: 2,
-    scale: -1,
-    ease: "back",
-  });
-};
+// //Text Intro
+// export const textIntro = (elem) => {
+//   gsap.from(elem, {
+//     xPercent: -20,
+//     opacity: 0,
+//     stagger: 0.2,
+//     duration: 2,
+//     scale: -1,
+//     ease: "back",
+//   });
+// };
 
 //Open menu
 export const menuShow = (elem1, elem2) => {
@@ -57,8 +57,7 @@ export const staggerLinks = (elem1, elem2, elem3) => {
 export const hoverLink = (e) => {
   gsap.to(e.target, {
     duration: 0.4,
-    y: 3,
-    skewX: 4,
+    x: 15,
     ease: "power2.inOut",
   });
 };
@@ -67,50 +66,7 @@ export const hoverLink = (e) => {
 export const hoverExit = (e) => {
   gsap.to(e.target, {
     duration: 0.4,
-    y: -3,
-    skewX: 0,
+    x: 0,
     ease: "power2.inOut",
   });
 };
-//Skew gallery Images
-export const skewGallery = (elem1) => {
-  //register ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-  // make the right edge "stick" to the scroll bar. force3D: true improves performance
-  gsap.set(elem1, { transformOrigin: "right center", force3D: true });
-  let clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
-  ScrollTrigger.create({
-    trigger: elem1,
-    onUpdate: (self) => {
-      const velocity = clamp(Math.round(self.getVelocity() / 300));
-      gsap.to(elem1, {
-        skew: 0,
-        skewY: velocity,
-        ease: "power3",
-        duration: 0.8,
-        overwrite: true,
-      });
-    },
-  });
-};
-
-function SplitTextToChars(textNode) {
-  const textContent = textNode.textContent;
-  const textSplit = textContent.split("");
-
-  const frag = document.createDocumentFragment();
-  textSplit.forEach((letter, i) => {
-    const span = document.createElement("span");
-    span.textContent = letter;
-    span.style = `${
-      letter === " " ? "min-width: 1em;" : ""
-    }z-index: ${textSplit.length -
-    i}; position: relative; display: inline-block;`;
-    frag.appendChild(span);
-  });
-  textNode.textContent = "";
-  textNode.appendChild(frag);
-
-  return textNode.children;
-}
-export default SplitTextToChars;

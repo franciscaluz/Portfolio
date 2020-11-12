@@ -19,7 +19,7 @@ const PortfolioScreen = () => {
               <PortfolioAccordion/>
             </div>
             <div className="menu-spinner-wrapper">
-              <div className="menu-spinner">
+              <div className="menu-spinner rotate-in">
                 <h6>Choississez une catégorie</h6>
               </div>
             </div>
@@ -35,29 +35,50 @@ export default PortfolioScreen;
 const Wrapper = styled.div`
 
 .section-title-wrapper {
-width: 100%;
+  width: 100%;
 }
+
+.menu-spinner-wrapper {
+  position: fixed;
+  bottom: 15%;
+  right: 15%;
+  z-index: 2;
+}
+
+.menu-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 100%;
+  background: #ff2679;
+  opacity: 0;
+
+  h6 {
+    margin-bottom: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+}
+
+@media(max-width: 767.98px) {
 
   .menu-spinner-wrapper {
     position: fixed;
-    bottom: 15%;
-    right: 15%;
+    bottom: 65px;
+    right: 15px;
+  }
 
-    .menu-spinner {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 150px;
-      height: 150px;
-      padding: 20px;
-      border-radius: 100%;
-      background: #ff2679;
-    }
+  .menu-spinner {
+    width: 100px;
+    height: 100px;
 
     h6 {
-      text-transform: uppercase;
-      margin-bottom: 0;
+      font-size: 0.6em;
     }
   }
+}  
 `;

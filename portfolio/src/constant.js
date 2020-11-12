@@ -119,8 +119,8 @@ export const projects = [
     ],
     urls: [
       {
-        id: "1", type: "etsy", url: "https://www.etsy.com/ca-fr/shop/RosemontCG",},
-      { id: "2", type: "link", url: "https://www.rosemontcg.com/" },
+        id: "1", type: "vercel", url: "https://septcinq.vercel.app/",},
+      { id: "2", type: "github", url: "https://www.rosemontcg.com/" },
     ],
   },
   {
