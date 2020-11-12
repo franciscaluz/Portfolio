@@ -4,7 +4,7 @@ import Headroom from "react-headroom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
-import { RiMenu3Line } from "react-icons/ri";
+import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 
 const BaseScreen = ({ children }) => {
   // State of our Menu
@@ -54,8 +54,7 @@ const BaseScreen = ({ children }) => {
       <Headroom>
         <Navigation>
           <button onClick={handleMenu}>
-            <RiMenu3Line/>
-            {state.menuName}
+            {state.clicked === true ? <RiCloseFill/> : <RiMenuFill/> }
           </button>
         </Navigation>
       </Headroom>

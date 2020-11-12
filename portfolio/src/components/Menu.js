@@ -85,14 +85,13 @@ const Menu = ({ state }) => {
                   </li>
 
                   <li>
-                    <Link
+                    <a href="mailto:franciscaluz@hotmail.com"
                       onMouseEnter={(e) => hoverLink(e)}
                       onMouseOut={(e) => hoverLink(e)}
                       ref={(el) => (line3 = el)}
-                      to="/contact-us"
                     >
                       Contact
-                    </Link>
+                    </a>
                   </li>
 
                 </ul>
