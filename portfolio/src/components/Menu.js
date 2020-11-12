@@ -87,7 +87,7 @@ const Menu = ({ state }) => {
                   <li>
                     <a href="mailto:franciscaluz@hotmail.com"
                       onMouseEnter={(e) => hoverLink(e)}
-                      onMouseOut={(e) => hoverLink(e)}
+                      onMouseOut={(e) => hoverExit(e)}
                       ref={(el) => (line3 = el)}
                     >
                       Contact

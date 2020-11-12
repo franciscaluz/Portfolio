@@ -69,4 +69,14 @@ const BaseScreen = ({ children }) => {
 export default BaseScreen;
 const Wrapper = styled.div`
   position: relative;
+  
+  .menu {
+    button {
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1.25em;
+    }
+  }
 `;
