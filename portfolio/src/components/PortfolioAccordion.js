@@ -1,64 +1,17 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import { projects } from "../constant";
 import { Link } from "react-router-dom";
+import AccordionItem from "./AccordionItem";
+import Accordion from "./Accordion";
+
 
 const PortfolioAccordion = () => {
 
-  const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
-    return (
-      <div className="accordion-wrapper">
-        <div className="accordion-button-wrapper">
-          <button className={`accordion-button display-2 text-stroke ${isCollapsed ? 'collapsed' : 'expanded'}`} onClick={handleClick}>
-            {label}
-          </button>
-        </div>
-        <div className="accordion-item-wrapper">
-          <div
-            className={`accordion-item ${isCollapsed ? 'collapsed' : 'expanded'}`}
-            aria-expanded={isCollapsed}
-          >
-            {children}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const Accordion = ({ defaultIndex, onItemClick, children }) => {
-    const [openPortfolio, setOpenPortfolio] = useState(defaultIndex);
-
-    const changeItem = itemIndex => {
-      if (typeof onItemClick === 'function') onItemClick(itemIndex);
-      if (itemIndex !== openPortfolio) setOpenPortfolio(itemIndex);
-      else setOpenPortfolio(0)
-    };
-
-    const items = children.filter(item => item.type.name === 'AccordionItem');
-
-    return (
-      <>
-        {items.map(({ props }) => (
-          <AccordionItem
-            key={props.index}
-            isCollapsed={openPortfolio !== props.index}
-            label={props.label}
-            handleClick={() => changeItem(props.index)}
-            children={props.children}
-          />
-        ))}
-      </>
-    );
-  };
-
   return (
-
     <Wrapper>
-
-      <Accordion defaultIndex="0" onItemClick={console.log} >
-
+      <Accordion defaultIndex="0">
         <AccordionItem label="Dev" index="1">
-
           {projects
             .filter((project) => project.project_cat.includes("Dev"))
             .sort((a, b) => b.id - a.id)
@@ -103,15 +56,12 @@ const PortfolioAccordion = () => {
             Voir tous les projets Web
           </Link>
         </AccordionItem>
-
         <AccordionItem label="Graph" index="3">
           <Link to="/graphic-design" className="accordion-item-link mb-0">
             Voir tous les projets Graphiques
           </Link>
         </AccordionItem>
-
       </Accordion>
-
     </Wrapper>
   );
 };
