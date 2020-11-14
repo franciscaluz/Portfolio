@@ -1,67 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { projects } from "../constant";
-import { Link } from "react-router-dom";
 import AccordionItem from "./AccordionItem";
-import Accordion from "./Accordion";
 
 
 const PortfolioAccordion = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  function onItemClick(index) {
+    if (index === activeIndex) {
+      setActiveIndex(null)
+    } else {
+      setActiveIndex(index)
+    }
+  }
 
   return (
     <Wrapper>
-      <Accordion defaultIndex="0">
-        <AccordionItem label="Dev" index="1">
-          {projects
-            .filter((project) => project.project_cat.includes("Dev"))
-            .sort((a, b) => b.id - a.id)
-            .map((filteredProject, index) => {
-              const { client, slug } = filteredProject;
-              return (
-                <Link
-                  to={`/project/${slug}`}
-                  className="accordion-item-link"
-                  key={index}
-                >
-                  {client}
-                </Link>
-              );
-            })}
-
-          <Link to="/dev" className="accordion-item-link primary-link">
-            Voir tous les projets Dev
-          </Link>
-
-        </AccordionItem>
-
-        <AccordionItem label="Web" index="2">
-          {projects
-            .filter((project) =>
-              project.project_cat.includes("Design Web")
-            )
-            .sort((a, b) => b.id - a.id)
-            .map((filteredProject, index) => {
-              const { client, slug } = filteredProject;
-              return (
-                <Link
-                  to={`/project/${slug}`}
-                  className="accordion-item-link"
-                  key={index}
-                >
-                  {client}
-                </Link>
-              );
-            })}
-          <Link to="/web-design" className="accordion-item-link primary-link">
-            Voir tous les projets Web
-          </Link>
-        </AccordionItem>
-        <AccordionItem label="Graph" index="3">
-          <Link to="/graphic-design" className="accordion-item-link mb-0">
-            Voir tous les projets Graphiques
-          </Link>
-        </AccordionItem>
-      </Accordion>
+      <AccordionItem index={0} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Dev" category="dev" label="Dev" />
+      <AccordionItem index={1} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Design Web" category="web" label="Web" />
+      <AccordionItem index={2} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Graph" category="graph" label="Graph" />
     </Wrapper>
   );
 };
