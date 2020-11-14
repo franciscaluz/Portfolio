@@ -1,117 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { projects } from "../constant";
-import { Link } from "react-router-dom";
+import AccordionItem from "./AccordionItem";
+
 
 const PortfolioAccordion = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
-    return (
-      <div className="accordion-wrapper">
-        <div className="accordion-button-wrapper">
-          <button className={`accordion-button display-2 text-stroke ${isCollapsed ? 'collapsed' : 'expanded'}`} onClick={handleClick}>
-            {label}
-          </button>
-        </div>
-        <div className="accordion-item-wrapper">
-          <div
-            className={`accordion-item ${isCollapsed ? 'collapsed' : 'expanded'}`}
-            aria-expanded={isCollapsed}
-          >
-            {children}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const Accordion = ({ defaultIndex, onItemClick, children }) => {
-    const [openPortfolio, setOpenPortfolio] = useState(defaultIndex);
-
-    const changeItem = itemIndex => {
-      if (typeof onItemClick === 'function') onItemClick(itemIndex);
-      if (itemIndex !== openPortfolio) setOpenPortfolio(itemIndex);
-      else setOpenPortfolio(0)
-    };
-
-    const items = children.filter(item => item.type.name === 'AccordionItem');
-
-    return (
-      <>
-        {items.map(({ props }) => (
-          <AccordionItem
-            key={props.index}
-            isCollapsed={openPortfolio !== props.index}
-            label={props.label}
-            handleClick={() => changeItem(props.index)}
-            children={props.children}
-          />
-        ))}
-      </>
-    );
-  };
+  function onItemClick(index) {
+    if (index === activeIndex) {
+      setActiveIndex(null)
+    } else {
+      setActiveIndex(index)
+    }
+  }
 
   return (
-
     <Wrapper>
-
-      <Accordion defaultIndex="0" onItemClick={console.log} >
-
-        <AccordionItem label="Dev" index="1">
-
-          {projects
-            .filter((project) => project.project_cat.includes("Dev"))
-            .sort((a, b) => b.id - a.id)
-            .map((filteredProject, index) => {
-              const { client, slug } = filteredProject;
-              return (
-                <Link
-                  to={`/project/${slug}`}
-                  className="accordion-item-link"
-                  key={index}
-                >
-                  {client}
-                </Link>
-              );
-            })}
-
-          <Link to="/dev" className="accordion-item-link primary-link">
-            Voir tous les projets Dev
-          </Link>
-
-        </AccordionItem>
-
-        <AccordionItem label="Web" index="2">
-          {projects
-            .filter((project) =>
-              project.project_cat.includes("Design Web")
-            )
-            .sort((a, b) => b.id - a.id)
-            .map((filteredProject, index) => {
-              const { client, slug } = filteredProject;
-              return (
-                <Link
-                  to={`/project/${slug}`}
-                  className="accordion-item-link"
-                  key={index}
-                >
-                  {client}
-                </Link>
-              );
-            })}
-          <Link to="/web-design" className="accordion-item-link primary-link">
-            Voir tous les projets Web
-          </Link>
-        </AccordionItem>
-
-        <AccordionItem label="Graph" index="3">
-          <Link to="/graphic-design" className="accordion-item-link mb-0">
-            Voir tous les projets Graphiques
-          </Link>
-        </AccordionItem>
-
-      </Accordion>
-
+      <AccordionItem index={0} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Dev" category="dev" label="Dev" />
+      <AccordionItem index={1} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Design Web" category="web" label="Web" />
+      <AccordionItem index={2} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Graph" category="graph" label="Graph" />
     </Wrapper>
   );
 };
