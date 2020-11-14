@@ -134,7 +134,7 @@ export const projects = [
     project_logo: `${RosemontLogo}`,
     project_color: "#262626",
     details:
-      "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin de soutenir son compte actuel sur Etsy.",
+      "Rosemont Camera Gear est une petite entreprise montréalaise spécialisée dans la vente de sangles pour appareil photo qui avait besoin d'un site e-vitrine sur Wordpress afin d'apporter un soutien à leur site Etsy.",
     tools: ["Illustrator", "Wordpress", "Css", "PHP", "Jquery"],
     photos: [
       { id: "1", name: "Page d'Accueil", photo: `${RosemontHomepage}` },
@@ -162,7 +162,6 @@ export const projects = [
     tools: ["Figma"],
     photos: [
       { id: "1", name: "Page Projets", photo: `${UnityProject}` },
-      { id: "2", name: "Page Services", photo: `${SochProductPage}` },
     ],
     urls: [
       { id: "", type: "", url: "",},
@@ -200,7 +199,7 @@ export const projects = [
     project_logo: `${QubLogo}`,
     project_color: "#FF21B2",
     details:
-      "Projet de formation d'un site fictif de streaming de musique, basé sur la dynamisation de la connexion utilisateur, les données type object, ainsi que les différents routages.",
+      "Projet de formation d'un site fictif de streaming de musique, utilisant une connexion/déconnexion utilisateur, récupération de données type object, ainsi que différents routages.",
     tools: ["Figma", "React", "JSX", "SASS"],
     photos: [
       { id: "1", name: "Page Connexion", photo: `${QubLogin}` },
@@ -232,7 +231,7 @@ export const projects = [
       { id: "3", name: "Page Personnage", photo: `${WikiCharacterPage}` },
     ],
     urls: [
-      { id: "1", type: "github", url: "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub" },
+      { id: "1", type: "github", url: "https://github.com/franciscaluz/WikAndMorty" },
       { id: "2", type: "vercel", url: "https://aec-front-end-eight.vercel.app/" },
     ],
   },
