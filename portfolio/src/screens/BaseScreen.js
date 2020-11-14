@@ -47,21 +47,28 @@ const BaseScreen = ({ children }) => {
     }
   };
 
-
   return (
     <Wrapper>
+
       <Menu state={state} />
+
       <Headroom>
+
         <Navigation>
+
           <button onClick={handleMenu}>
             {state.clicked === true ? <RiCloseFill/> : <RiMenuFill/> }
           </button>
         </Navigation>
+
       </Headroom>
+
       <div className="page-wrapper">
         {children}
       </div>
+
       <Footer />
+
     </Wrapper>
   );
 };

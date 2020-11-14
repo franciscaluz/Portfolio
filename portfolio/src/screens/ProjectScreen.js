@@ -58,10 +58,12 @@ const ProjectScreen = () => {
 
                   <div className="section-project-menu">
 
-                    <div className="menu">
+                    <div className="project-menu">
 
                       <div className="section-title-wrapper">
+
                         <h1 className="display-3">Projet</h1>
+
                         <div className="section-title-menu">
                           <h1 className="text-stroke display-3">Détails</h1>
                         </div>
@@ -204,7 +206,7 @@ const Wrapper = styled.div`
   transition: max-width 0.3s ease;
 }
 
-.menu {
+.project-menu {
   display: inline-block;
   opacity: 0;
   transform: translate(-100%, 0);
@@ -219,7 +221,7 @@ const Wrapper = styled.div`
     visibility: visible;
   }
 
-  .menu {
+  .project-menu {
     opacity: 1;
     transform: translate(0%, 0);
   }
@@ -313,7 +315,7 @@ const Wrapper = styled.div`
     transition: all 0.3s ease;
   }
 
-  .menu {
+  .project-menu {
     opacity: 1;
     transform: translate(0, 0%);
     transition: none;
@@ -355,5 +357,15 @@ const Wrapper = styled.div`
   }
 }
 
+@media(max-width: 767.98px) {
+  .project-menu .display-3 {
+    font-size: 10vw;
+  }
+}
 
+@media(max-width: 575.98px) {
+  .project-menu .display-3 {
+    font-size: 15vw;
+  }
+}
 `;

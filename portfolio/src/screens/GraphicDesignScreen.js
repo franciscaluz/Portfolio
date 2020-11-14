@@ -96,8 +96,11 @@ const GraphicDesignScreen = () => {
                 </div>
 
                 <div className="section-graphic-filter-wrapper">
+
                   <div className="section-graphic-filter-content">
+
                     <h6>Filtrer</h6>
+
                     <div>
                       <input id="toggle-off" className="toggle toggle-left" name="toggle" defaultChecked={true} type="radio"/>
                       <label htmlFor="toggle-off" className="filter-btn" onClick={() => handleFiltre(false)} >Non</label>
@@ -105,9 +108,13 @@ const GraphicDesignScreen = () => {
                       <input id="toggle-on" className="toggle toggle-right" name="toggle" type="radio" />
                       <label htmlFor="toggle-on" className="filter-btn" onClick={() => handleFiltre(true)}>Oui</label>
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
+
             </section>
 
             <section className="section-graphic-content">
@@ -131,10 +138,15 @@ const GraphicDesignScreen = () => {
                     );
                   })}
               </Masonry>
+
             </section>
+
           </section>
+
         </Wrapper>
+
       </Container>
+
     </BaseScreen>
   );
 };

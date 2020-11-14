@@ -7,25 +7,40 @@ import PortfolioAccordion from "../components/PortfolioAccordion";
 const PortfolioScreen = () => {
 
   return (
+
     <BaseScreen>
+
       <Container fluid="md">
+
         <Wrapper>
+
           <section className="section-portfolio">
+
             <div className="section-title-wrapper">
+
               <div className="section-title-button-container">
                 <h6 className="section-name">Portfolio</h6>
               </div>
+
               <h1 className="section-title display-2">Projets</h1>
+
               <PortfolioAccordion/>
             </div>
+
             <div className="menu-spinner-wrapper">
+
               <div className="menu-spinner rotate-in">
                 <h6>Choississez une catégorie</h6>
               </div>
+
             </div>
+
           </section>
+
         </Wrapper>
+
       </Container>
+
     </BaseScreen>
   );
 };

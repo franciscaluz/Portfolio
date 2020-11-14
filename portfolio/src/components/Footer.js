@@ -4,18 +4,26 @@ import { Container } from 'reactstrap';
 import { RiGithubLine, RiLinkedinLine, RiMailLine } from "react-icons/ri";
 
 const Footer = () => {
+
   return (
+
     <Wrapper>
+
       <Container fluid="md">
+
         <div className="d-flex align-items-center justify-content-between">
+
           <p className="text-thin text-sm">FA/VS@copyright.2020</p>
+
           <p>
             <a href="https://www.linkedin.com/in/franciscaluz-vargas/" target="_blank" rel="noopener noreferrer"><RiLinkedinLine/></a>
             <a href="https://github.com/franciscaluz" target="_blank" rel="noopener noreferrer"><RiGithubLine/></a>
             <a href="mailto:franciscaluz@hotmail.com" target="_blank" rel="noopener noreferrer"><RiMailLine/></a>
           </p>
         </div>
+
       </Container>
+
     </Wrapper>
   );
 };

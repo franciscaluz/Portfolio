@@ -50,34 +50,48 @@ const HomepageScreen = () => {
 
   }, []);
 
-
   return (
+
     <Wrapper>
+
       <Container>
+
         <Navigation />
+
         <section className="section-homepage">
+
           <Row className="align-content-stretch">
+
             <Col lg={6} xl={6}>
+
               <div className="homepage-img-wrapper">
                 <img src={HomeBg} alt="homepage" className="img-fluid" />
               </div>
             </Col>
+
             <Col lg={6} xl={6}>
+
               <div className="homepage-text-wrapper">
+
                 <div className="homepage-title">
+
                   <h1 className="display-1">
                     <span className="pageTagline" ref={tl} id="indexTagline"></span>
                     <span id="cursor" className="blink">|</span>
                   </h1>
+
                 </div>
+
                 <p className="text-lg">
                   Mon nom est Francisca.
                 </p>
+
                 <p className="text-lg homepage-content">
                   Je suis développeur Front-End Junior, passionnée de code, fan
                   de web design, design graphique et animations à mes heures
                   perdues.
                 </p>
+
                 <div className="homepage-button-container">
                   <Link to="/portfolio" className="underlined-reversed">
                     Voici mon portfolio
@@ -85,10 +99,15 @@ const HomepageScreen = () => {
                 </div>
 
               </div>
+
             </Col>
+
           </Row>
+
         </section>
+
       </Container>
+
     </Wrapper>
   );
 };
@@ -96,56 +115,52 @@ const HomepageScreen = () => {
 export default HomepageScreen;
 
 const Wrapper = styled.div`
-  .navbar-right {
-    display: none !important;
-  }
-  .section-homepage {
-    height: auto !important;
-    min-height: calc(100vh - 150px);
-    display: flex;
-    align-items: center;
-  }
-  .homepage-text-wrapper {
+.navbar-right {
+  display: none !important;
+}
 
-  }
-  .homepage-title {
-    display: block;
-    height: 200px;
-    margin-bottom: 1em;
-  }
-  
-  
-  .display-1 {
+.section-homepage {
+  height: auto !important;
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+}
+
+.homepage-title {
+  display: block;
+  height: 200px;
+  margin-bottom: 1em;
+}
+
+.display-1 {
   position: relative;
   display: inline-block;
   height: 187px;
   margin-bottom: 0;
-  
+
   .pageTagline {
     position: relative;
     height: 187px !important;
-    }
   }
-  
-  span.blink {
+}
+
+span.blink {
   position: absolute;
   right: -40px;
-  }
-  
-  }
-  
-  .homepage-content {
+}
+
+.homepage-content {
   margin-bottom: 2em;
+}
+
+.homepage-button-container {
+  text-align: right;
+
+  a {
+    color: #1a1a1a;
+    letter-spacing: -0.05em;
+    font-size: 0.875em;
   }
- 
-  .homepage-button-container {
-   text-align: right;
-   
-   a {
-   color: #1a1a1a;
-   letter-spacing: -0.05em;
-       font-size: 0.875em;
-   }
-  }
+}
   
 `;

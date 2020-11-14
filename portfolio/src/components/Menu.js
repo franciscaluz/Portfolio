@@ -43,7 +43,9 @@ const Menu = ({ state }) => {
   }, [state]);
 
   return (
+
     <Wrapper ref={(el) => (menuWrapper = el)} className="hamburger-menu">
+
       <div
         ref={(el) => (show1 = el)}
         className="menu-secondary-background-color"

@@ -4,6 +4,7 @@ import { projects } from "../constant";
 import { Link } from "react-router-dom";
 
 const PortfolioAccordion = () => {
+
   const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
     return (
       <div className="accordion-wrapper">
@@ -32,6 +33,7 @@ const PortfolioAccordion = () => {
       if (itemIndex !== openPortfolio) setOpenPortfolio(itemIndex);
       else setOpenPortfolio(0)
     };
+
     const items = children.filter(item => item.type.name === 'AccordionItem');
 
     return (
@@ -50,9 +52,13 @@ const PortfolioAccordion = () => {
   };
 
   return (
+
     <Wrapper>
+
       <Accordion defaultIndex="0" onItemClick={console.log} >
+
         <AccordionItem label="Dev" index="1">
+
           {projects
             .filter((project) => project.project_cat.includes("Dev"))
             .sort((a, b) => b.id - a.id)
@@ -68,10 +74,13 @@ const PortfolioAccordion = () => {
                 </Link>
               );
             })}
+
           <Link to="/dev" className="accordion-item-link primary-link">
             Voir tous les projets Dev
           </Link>
+
         </AccordionItem>
+
         <AccordionItem label="Web" index="2">
           {projects
             .filter((project) =>
@@ -100,7 +109,9 @@ const PortfolioAccordion = () => {
             Voir tous les projets Graphiques
           </Link>
         </AccordionItem>
+
       </Accordion>
+
     </Wrapper>
   );
 };
