@@ -232,7 +232,7 @@ export const projects = [
     ],
     urls: [
       { id: "1", type: "github", url: "https://github.com/franciscaluz/WikAndMorty" },
-      { id: "2", type: "vercel", url: "https://aec-front-end-eight.vercel.app/" },
+      { id: "2", type: "vercel", url: "https://wik-and-morty.vercel.app/" },
     ],
   },
 ];
@@ -289,6 +289,6 @@ export const graphic = [
   { id: "49", name: "Inspiration", type: "", year: "", photo: `${HandsetInsp1}`},
   { id: "50", name: "Inspiration", type: "", year: "", photo: `${HandsetInsp2}`},
   { id: "51", name: "Inspiration", type: "", year: "", photo: `${HandsetInsp3}`},
-  { id: "52", name: "Inspiration", type: "", year: "", photo: `${Handset}` },
+  { id: "52", name: "HandSet", type: "Projet Personnel", year: "2018", photo: `${Handset}` },
   { id: "53", name: "Citation 3D", type: "Projet Personnel", year: "2018", photo: `${Quote}` },
 ];
