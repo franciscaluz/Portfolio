@@ -13,6 +13,7 @@
     "i18next-http-backend": "^1.0.21",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
+    "react-circular-progressbar": "^2.0.3",
     "react-dom": "^16.14.0",
     "react-headroom": "^3.0.0",
     "react-i18next": "^11.7.3",

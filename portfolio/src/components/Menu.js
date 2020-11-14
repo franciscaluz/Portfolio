@@ -178,8 +178,17 @@ const Wrapper = styled.div`
             color: #FF2679;
           }
         }
+        
+        @media(max-width: 991.98px) {
+        font-size: 9.687vw;
+        height: 13.623vw;
+        }
       }
     }
   }
 }
+
+
+
+
 `;

@@ -1,11 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import 'react-circular-progressbar/dist/styles.css';
 import HomepageScreen from "./screens/HomepageScreen";
 import PortfolioScreen from "./screens/PortfolioScreen";
 import DevScreen from "./screens/DevScreen";
 import WebDesignScreen from "./screens/WebDesignScreen";
 import GraphicDesignScreen from "./screens/GraphicDesignScreen";
 import ProjectScreen from "./screens/ProjectScreen";
+import InfosScreen from "./screens/InfosScreen";
 import Test from "./screens/test";
 
 function App() {
@@ -29,6 +31,9 @@ function App() {
         </Route>
         <Route path="/project/:slug">
           <ProjectScreen />
+        </Route>
+        <Route path="/infos">
+          <InfosScreen />
         </Route>
         <Route path="/test">
           <Test />
