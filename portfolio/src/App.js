@@ -8,7 +8,6 @@ import WebDesignScreen from "./screens/WebDesignScreen";
 import GraphicDesignScreen from "./screens/GraphicDesignScreen";
 import ProjectScreen from "./screens/ProjectScreen";
 import InfosScreen from "./screens/InfosScreen";
-import Test from "./screens/test";
 
 function App() {
   return (
@@ -34,9 +33,6 @@ function App() {
         </Route>
         <Route path="/infos">
           <InfosScreen />
-        </Route>
-        <Route path="/test">
-          <Test />
         </Route>
       </Switch>
     </>
