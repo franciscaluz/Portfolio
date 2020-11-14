@@ -127,46 +127,46 @@ const Wrapper = styled.div`
   overflow: hidden;
   transition: 0.4s ease-out;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: 0.3s;
-  }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 2;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(0, 0, 0, 0.5);
+  //   opacity: 0;
+  //   transition: 0.3s;
+  // }
 
   &:hover {
     // box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     transform: translateY(10px);
 
-    &:before {
-      opacity: 1;
-    }
+    // &:before {
+    //   opacity: 1;
+    // }
 
-    .info {
-      opacity: 1;
-      transform: translateY(-100%);
-    }
+    // .info {
+    //   opacity: 1;
+    //   transform: translateY(-100%);
+    // }
   }
 
-  .info {
-    position:relative;
-    z-index: 3;
-    padding: 1.5em;
-    color: #ffffff;
-    font-size: 0.825em;
-    font-weight: 400;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-50%);
-    transition: 0.4s;
-  }
+  // .info {
+  //   position:relative;
+  //   z-index: 3;
+  //   padding: 1.5em;
+  //   color: #ffffff;
+  //   font-size: 0.825em;
+  //   font-weight: 400;
+  //   text-align: center;
+  //   opacity: 0;
+  //   transform: translateY(-50%);
+  //   transition: 0.4s;
+  // }
 }
 
 .card-logo-wrapper {

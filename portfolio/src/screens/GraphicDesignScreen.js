@@ -252,7 +252,8 @@ const Wrapper = styled.div`
       cursor: default;
       color: #fff;
       transition: color 200ms;
-      &:after{
+      
+      &:after {
         left: 0;
       }
     }
