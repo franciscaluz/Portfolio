@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { projects } from "../constant";
 
-const AccordionItem = ({label, filterKey, onItemClick, activeIndex, index, category}) => {
+const AccordionItem = ({label, filterKey, onItemClick, activeIndex, index, category, url}) => {
   const filteredProjects = projects.filter(project => project.project_cat.includes(filterKey));
-  const isActive = activeIndex === index
+  const isActive = activeIndex === index;
 
   return (
       <div className="accordion-wrapper">
@@ -21,19 +21,26 @@ const AccordionItem = ({label, filterKey, onItemClick, activeIndex, index, categ
               className={`accordion-item ${!isActive ? 'collapsed' : 'expanded'}`}
               aria-expanded={!isActive}
           >
-            {filteredProjects.map(project => (
-                <Link
+            {category === "graph" ?
+              <Link to="/graphic-design" className="accordion-item-link mb-0">
+                Voir tous les projets Graphiques
+              </Link>
+              :
+                <>
+              {filteredProjects.map(project => (
+                  <Link
                     to={`/project/${project.slug}`}
                     className="accordion-item-link"
                     key={project.slug}
-                >
-                  {project.client}
-                </Link>
-            ))}
-            {category === 'graph' &&
-            <Link to="/graphic-design" className="accordion-item-link mb-0">
-              Voir tous les projets Graphiques
-            </Link>
+                  >
+                    {project.client}
+                  </Link>
+                ))}
+
+              <Link to={url} className="accordion-item-link primary-link mb-0">
+              Voir tous
+              </Link>
+              </>
             }
           </div>
         </div>

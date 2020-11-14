@@ -16,8 +16,8 @@ const PortfolioAccordion = () => {
 
   return (
     <Wrapper>
-      <AccordionItem index={0} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Dev" category="dev" label="Dev" />
-      <AccordionItem index={1} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Design Web" category="web" label="Web" />
+      <AccordionItem index={0} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Dev" category="dev" label="Dev" url="/dev"/>
+      <AccordionItem index={1} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Design Web" category="web" label="Web" url="/web-design"/>
       <AccordionItem index={2} activeIndex={activeIndex} onItemClick={onItemClick} filterKey="Graph" category="graph" label="Graph" />
     </Wrapper>
   );
