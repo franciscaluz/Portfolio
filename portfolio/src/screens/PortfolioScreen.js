@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import BaseScreen from "./BaseScreen";
 import { Container } from "reactstrap";
-import Accordion from "../components/PortfolioAccordion";
+import PortfolioAccordion from "../components/PortfolioAccordion";
 
 const PortfolioScreen = () => {
 
@@ -23,7 +23,9 @@ const PortfolioScreen = () => {
               </div>
 
               <h1 className="section-title display-2">Projets</h1>
-              <Accordion/>
+              <div>
+               <PortfolioAccordion/>
+              </div>
             </div>
 
             <div className="menu-spinner-wrapper">
