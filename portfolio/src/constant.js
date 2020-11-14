@@ -119,8 +119,8 @@ export const projects = [
     ],
     urls: [
       {
-        id: "1", type: "vercel", url: "https://septcinq.vercel.app/",},
-      { id: "2", type: "github", url: "https://www.rosemontcg.com/" },
+        id: "1", type: "github", url: "https://github.com/franciscaluz/septcinq",},
+      { id: "2", type: "vercel", url: "https://septcinq.vercel.app/" },
     ],
   },
   {
@@ -209,8 +209,8 @@ export const projects = [
     ],
     urls: [
       {
-        id: "1", type: "github", url: "https://github.com/franciscaluz/AEC_Front_End/tree/master/Programmation2/04-projet-1/qub" },
-      { id: "2", type: "vercel", url: "https://aec-front-end-eight.vercel.app/" },
+        id: "1", type: "github", url: "https://github.com/franciscaluz/Qub" },
+      { id: "2", type: "vercel", url: "https://qub.vercel.app/" },
     ],
   },
   {
