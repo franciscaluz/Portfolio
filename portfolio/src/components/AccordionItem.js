@@ -8,15 +8,20 @@ const AccordionItem = ({label, filterKey, onItemClick, activeIndex, index, categ
 
   return (
       <div className="accordion-wrapper">
+
         <div className="accordion-button-wrapper">
+
           <button
               className={`accordion-button display-2 text-stroke ${!isActive ? 'collapsed' : 'expanded'}`}
               onClick={() => onItemClick(index)}
           >
             {label}
           </button>
+
         </div>
+
         <div className="accordion-item-wrapper">
+
           <div
               className={`accordion-item ${!isActive ? 'collapsed' : 'expanded'}`}
               aria-expanded={!isActive}
@@ -43,7 +48,9 @@ const AccordionItem = ({label, filterKey, onItemClick, activeIndex, index, categ
               </>
             }
           </div>
+
         </div>
+
       </div>
   );
 };
