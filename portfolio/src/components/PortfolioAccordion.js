@@ -275,7 +275,7 @@ width: 100%;
 
 }
 
-@media(max-width: 576.98px) {
+@media(max-width: 575.98px) {
   .accordion-wrapper {
     flex-direction: column;
   }
